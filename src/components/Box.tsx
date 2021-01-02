@@ -21,6 +21,7 @@ const Box: React.FC<Props> = (props) => {
             {...props}
             ref={mesh}
             scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+            position={[0,3,0]}
             onClick={(e) => setActive(!active)}
             onPointerOver={(e) => setHover(true)}
             onPointerOut={(e) => setHover(false)}>

@@ -1,17 +1,18 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import {addLine, setup3dScene} from "./dream-house-3d";
 import {Canvas} from "react-three-fiber";
+import Sphere from "./components/Sphere";
 import Box from "./components/Box";
+import Lighting from "./components/Lighting";
+import Ground from "./components/Ground";
 
 function App() {
     return (
-        <Canvas camera={{zoom: 40, position: [0, 0, 500]}} >
-            <ambientLight intensity={0.5} />
-            <pointLight position={[150, 150, 150]} intensity={0.55} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <Box position={[0, -3.5, 0]}/>
-            <Box position={[1, 0, 0]} />
+        <Canvas camera={{position: [5, 5, 0], near: 0.1, far: 20}}>
+            <Lighting/>
+            <Sphere/>
+            <Box/>
+            <Ground/>
         </Canvas>
     );
 }

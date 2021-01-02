@@ -6,6 +6,7 @@ import Box from "./components/Box";
 import Lighting from "./components/Lighting";
 import Ground from "./components/Ground";
 import Controls from "./components/Controls";
+import Heart from "./components/Heart";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Sphere/>
             <Box/>
             <Ground/>
+            <Heart/>
             <Controls/>
         </Canvas>
     );

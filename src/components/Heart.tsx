@@ -1,11 +1,28 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 import * as THREE from 'three';
+import {useFrame} from "react-three-fiber";
 
 interface Props {
+    position: [number, number, number]
 }
 
-const Heart: React.FC<Props> = ({}) => {
-
+const Heart: React.FC<Props> = ({position = [0, 0, 0]}) => {
+    // This reference will give us direct access to the mesh
+    const mesh = useRef<THREE.Mesh>();
+    // Set up state for the hovered and active state
+    const [hovered, setHover] = useState(false)
+    const [active, setActive] = useState(false)
+    // Rotate mesh every frame, this is outside of React without overhead
+    useFrame(() => {
+        if (mesh?.current?.rotation) {
+            mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+        }
+    })
+    useFrame(() => {
+        if (mesh?.current?.rotation) {
+            mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+        }
+    });
     const shape = useMemo(() => {
         const x = 0, y = 0;
         const shape = new THREE.Shape()
@@ -21,7 +38,7 @@ const Heart: React.FC<Props> = ({}) => {
     }, [])
 
     return (
-        <mesh rotation={[Math.PI , 0, 0]} position={[0, 5, 0]}>
+        <mesh ref={mesh} rotation={[Math.PI, 0, 0]} position={position}>
             <shapeGeometry args={[shape]}/>
             <meshBasicMaterial color='hotpink' side={THREE.DoubleSide}/>
         </mesh>

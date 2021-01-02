@@ -18,7 +18,7 @@ function App() {
             <Heart position={[-10, 1, -10]}/>
             <Heart position={[10, 1, 10]}/>
             <GroundPlot/>
-            <Ground/>
+            {/*<Ground/>*/}
             <Controls/>
         </Canvas>
     );

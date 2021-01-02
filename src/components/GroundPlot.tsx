@@ -34,7 +34,7 @@ const GroundPlot: React.FC<Props> = ({}) => {
 
         medzePts.push(new THREE.Vector2(0, 0));
 
-        for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(0.05);
+        for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(0.1);
 
         const medzeShape = new THREE.Shape(medzePts);
 
@@ -43,7 +43,7 @@ const GroundPlot: React.FC<Props> = ({}) => {
     return (
         <mesh rotation={[-(Math.PI / 2), 0, -THREE.MathUtils.degToRad(-90)]} position={[5, 0.01, 2]}>
             <shapeGeometry args={[shape]}/>
-            <meshBasicMaterial color='blue' side={THREE.DoubleSide}/>
+            <meshBasicMaterial color='lawngreen' side={THREE.DoubleSide}/>
         </mesh>
     )
 };

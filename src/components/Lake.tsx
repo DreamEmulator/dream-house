@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Lake: React.FC<Props> = ({position}) => {
-    const circleRadius = 1;
+    const circleRadius = 1.5;
     const circleShape = useMemo(() => new THREE.Shape()
         .moveTo(0, circleRadius)
         .quadraticCurveTo(circleRadius, circleRadius, circleRadius, 0)

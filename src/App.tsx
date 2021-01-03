@@ -21,15 +21,14 @@ function App() {
     return (
         <>
             <Canvas camera={{
+                rotation:[0,0,190],
                 position: [0, 4, 6],
                 near: 0.1,
                 far: 500
             }}>
                 <Lighting/>
                 <Lake position={mapToPlot(-2.5, 7)}/>
-                <CubeOneM2 position={mapToPlot(8, 3)}/>
-                {/*<BoxyHouse position={mapToPlot(8, 3)}*/}
-                {/*           size={{width: metersToUnits(8), height: metersToUnits(6), depth: metersToUnits(12)}}/>*/}
+                <CubeOneM2 />
                 <WorldPlane/>
                 <Suspense fallback={null}>
                     <Tree position={mapToPlot(-4.75, 6)}/>

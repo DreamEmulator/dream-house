@@ -6,6 +6,7 @@ import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
 import {mapToPlot} from "./Helpers";
+import ObjectFromFile from "./components/ObjectFromFile";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
             <Sphere position={mapToPlot(-5.625, 13.2)}/>
             <Sphere position={mapToPlot(-6.05, 4.3)}/>
             <Sphere position={mapToPlot(0, 4.8)}/>
+            <ObjectFromFile file={require('./objects/2020.obj').default}/>
             <GroundPlot/>
             <Controls/>
         </Canvas>

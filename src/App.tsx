@@ -9,6 +9,7 @@ import Bear from "./components/Bear";
 import Lake from "./components/Lake";
 import Tree from "./components/Tree";
 import FarmHouse from "./components/FarmHouse";
+import WorldPlane from "./components/WorldPlane";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             }}>
                 <Lighting/>
                 <Lake position={mapToPlot(-3, 8)}/>
+                <WorldPlane/>
                 <Suspense fallback={null}>
                     <Tree position={mapToPlot(-4.75, 6)}/>
                     <Tree position={mapToPlot(-4.75, 10)}/>

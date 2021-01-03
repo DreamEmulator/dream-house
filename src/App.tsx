@@ -23,7 +23,7 @@ function App() {
                 <Tree position={mapToPlot(-4.75,6)}/>
                 <Tree position={mapToPlot(-4.75,10)}/>
                 <Tree position={mapToPlot(-5.5,8)}/>
-                <Tree position={mapToPlot(9,6)}/>
+                <Tree position={mapToPlot(8.5,7)}/>
                 <Tree position={mapToPlot(6,7)}/>
                 <Tree position={mapToPlot(9,3)}/>
             </Suspense>

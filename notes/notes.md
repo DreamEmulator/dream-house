@@ -7,6 +7,8 @@ https://dev.to/sanderdebr/let-s-build-3d-procedural-landscape-with-react-and-thr
 
 https://blog.logrocket.com/3d-rendering-in-the-browser-with-react-three-fiber/
 
+https://gist.github.com/vinitsaboo/9dd99684bea6fd2486cb5115e92eb33c
+
 **Fiber**
 
 https://github.com/pmndrs/react-three-fiber

@@ -3,9 +3,10 @@ import {useFrame} from "react-three-fiber";
 import * as THREE from 'three';
 
 interface Props {
+    position?: [number, number, number]
 }
 
-const Sphere: React.FC<Props> = ({}) => {
+const Sphere: React.FC<Props> = ({position = [0, 0, 0]}) => {
     // This reference will give us direct access to the mesh
     const mesh = useRef<THREE.Mesh>()
     // Set up state for the hovered and active state
@@ -17,16 +18,11 @@ const Sphere: React.FC<Props> = ({}) => {
             mesh.current.rotation.x = mesh.current.rotation.y += 0.01
         }
     })
-    useFrame(() => {
-        if (mesh?.current?.rotation) {
-            mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-        }
-    })
+
     return (
         <>
             <mesh ref={mesh}
-                  rotation={[2, 0, 0]}
-                  position={[0, 1, 0]}
+                  position={position}
                   scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
                   onClick={(e) => setActive(!active)}
                   onPointerOver={(e) => setHover(true)}

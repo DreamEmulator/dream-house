@@ -2,23 +2,29 @@ import React from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
 import Sphere from "./components/Sphere";
-import Box from "./components/Box";
 import Lighting from "./components/Lighting";
-import Ground from "./components/Ground";
 import Controls from "./components/Controls";
-import Heart from "./components/Heart";
 import GroundPlot from "./components/GroundPlot";
+import {mapToPlot} from "./Helpers";
 
 function App() {
     return (
-        <Canvas camera={{position: [5, 5, 0], near: 0.1, far: 1000}}>
+        <Canvas camera={{
+                position: [0,150, 100],
+            near: 0.1,
+            far: 500
+        }}>
             <Lighting/>
             <Sphere/>
-            <Box/>
-            <Heart position={[-10, 1, -10]}/>
-            <Heart position={[10, 1, 10]}/>
+            <Sphere position={mapToPlot(9.8, 2.05)}/>
+            <Sphere position={mapToPlot(8.9, 7.2)}/>
+            <Sphere position={mapToPlot(6.05, 7.05)}/>
+            <Sphere position={mapToPlot(3.55, 9)}/>
+            <Sphere position={mapToPlot(2.975, 7.1)}/>
+            <Sphere position={mapToPlot(-5.625, 13.2)}/>
+            <Sphere position={mapToPlot(-6.05, 4.3)}/>
+            <Sphere position={mapToPlot(0, 4.8)}/>
             <GroundPlot/>
-            {/*<Ground/>*/}
             <Controls/>
         </Canvas>
     );

@@ -41,9 +41,9 @@ const GroundPlot: React.FC<Props> = ({}) => {
         return medzeShape;
     }, [])
     return (
-        <mesh rotation={[-(Math.PI / 2), 0, -THREE.MathUtils.degToRad(-90)]} position={[5, 0.01, 2]}>
+        <mesh rotation={[-(Math.PI / 2), 0, 0]}>
             <shapeGeometry args={[shape]}/>
-            <meshBasicMaterial color='lawngreen' side={THREE.DoubleSide}/>
+            <meshPhongMaterial color='lawngreen' side={THREE.DoubleSide}/>
         </mesh>
     )
 };

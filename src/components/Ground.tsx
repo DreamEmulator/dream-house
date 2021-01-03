@@ -7,8 +7,8 @@ interface Props {
 const Ground: React.FC<Props> = ({}) => {
 
     return (
-        <mesh  rotation={[ -Math.PI / 2, 0, 0]}>
-            <planeBufferGeometry attach="geometry" args={[25, 25, 75, 75]} />
+        <mesh rotation={[-Math.PI / 2, 0, 0]}>
+            <planeBufferGeometry attach="geometry" args={[25, 25, 75, 75]}/>
             <meshPhongMaterial
                 side={THREE.DoubleSide}
                 attach="material"

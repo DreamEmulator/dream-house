@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import {useFrame} from "react-three-fiber";
 
 interface Props {
-    position: [number, number, number]
+    position?: [number, number, number]
 }
 
 const Heart: React.FC<Props> = ({position = [0, 0, 0]}) => {
@@ -38,9 +38,9 @@ const Heart: React.FC<Props> = ({position = [0, 0, 0]}) => {
     }, [])
 
     return (
-        <mesh ref={mesh} rotation={[Math.PI, 0, 0]} position={position}>
+        <mesh ref={mesh} rotation={[0, 0, 0]} position={position}>
             <shapeGeometry args={[shape]}/>
-            <meshBasicMaterial color='hotpink' side={THREE.DoubleSide}/>
+            <meshBasicMaterial color={hovered ? 'hotpink' : 'orange'} side={THREE.DoubleSide}/>
         </mesh>
     )
 };

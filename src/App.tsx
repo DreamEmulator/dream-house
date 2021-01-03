@@ -1,13 +1,14 @@
 import React, {Suspense} from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
-import Sphere from "./components/Sphere";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
 import {mapToPlot} from "./Helpers";
-import PatchOfTrees from "./components/PatchOfTrees";
 import Bear from "./components/Bear";
+import Lake from "./components/Lake";
+import Tree from "./components/Tree";
+import FarmHouse from "./components/FarmHouse";
 
 function App() {
     return (
@@ -17,18 +18,18 @@ function App() {
             far: 500
         }}>
             <Lighting/>
-            <Sphere/>
-            <Sphere position={mapToPlot(9.8, 2.05)}/>
-            <Sphere position={mapToPlot(8.9, 7.2)}/>
-            <Sphere position={mapToPlot(6.05, 7.05)}/>
-            <Sphere position={mapToPlot(3.55, 9)}/>
-            <Sphere position={mapToPlot(2.975, 7.1)}/>
-            <Sphere position={mapToPlot(-5.625, 13.2)}/>
-            <Sphere position={mapToPlot(-6.05, 4.3)}/>
-            <Sphere position={mapToPlot(0, 4.8)}/>
+            <Lake position={mapToPlot(-3, 8)}/>
             <Suspense fallback={null}>
-                <Bear position={mapToPlot(8, 5)} scale={0.2}/>
-                <PatchOfTrees/>
+                <Tree position={mapToPlot(-4.75,6)}/>
+                <Tree position={mapToPlot(-4.75,10)}/>
+                <Tree position={mapToPlot(-5.5,8)}/>
+                <Tree position={mapToPlot(9,6)}/>
+                <Tree position={mapToPlot(6,7)}/>
+                <Tree position={mapToPlot(9,3)}/>
+            </Suspense>
+            <Suspense fallback={null}>
+                <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
+                <Bear position={mapToPlot(8, 3)} scale={0.2}/>
             </Suspense>
             <GroundPlot/>
             <Controls/>

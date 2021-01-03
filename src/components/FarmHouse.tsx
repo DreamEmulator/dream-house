@@ -7,9 +7,9 @@ interface Props {
     rotation?: [number, number, number];
 }
 
-const Bear: React.FC<Props> = (props) => {
+const FarmHouse: React.FC<Props> = (props) => {
 return (
-    <ObjectFromGLTF {...props}file={require('../objects/bear.gltf').default}/>
+    <ObjectFromGLTF {...props}file={require('../objects/farmhouse_obj.gltf').default}/>
 )};
 
-export default Bear;
+export default FarmHouse;

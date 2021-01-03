@@ -1,6 +1,5 @@
 import React, {useMemo, useState} from 'react';
 import {OBJLoader} from "three/examples/jsm/loaders/OBJLoader";
-import {mapToPlot} from "../Helpers";
 
 interface Props {
     file: string;

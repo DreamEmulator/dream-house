@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
 import Sphere from "./components/Sphere";
@@ -6,12 +6,12 @@ import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
 import {mapToPlot} from "./Helpers";
-import ObjectFromFile from "./components/ObjectFromFile";
+import ObjectFromGLTF from "./components/ObjectFromGLTF";
 
 function App() {
     return (
         <Canvas camera={{
-                position: [0,150, 100],
+            position: [0, 150, 100],
             near: 0.1,
             far: 500
         }}>
@@ -25,7 +25,9 @@ function App() {
             <Sphere position={mapToPlot(-5.625, 13.2)}/>
             <Sphere position={mapToPlot(-6.05, 4.3)}/>
             <Sphere position={mapToPlot(0, 4.8)}/>
-            <ObjectFromFile file={require('./objects/bear.obj').default} scale={0.3} position={mapToPlot(6, 3)}/>
+            <Suspense fallback={null}>
+                <ObjectFromGLTF file={require('./objects/bear.gltf').default} scale={0.3} position={mapToPlot(6, 3)}/>
+            </Suspense>
             <GroundPlot/>
             <Controls/>
         </Canvas>

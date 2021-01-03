@@ -19,3 +19,7 @@ https://dream-house-3d.netlify.app/
 https://app.netlify.com/sites/dream-house-3d/deploys
 
 ****
+
+**Conver to GLTF**
+`obj2gltf -i bear.obj`
+https://github.com/CesiumGS/obj2gltf

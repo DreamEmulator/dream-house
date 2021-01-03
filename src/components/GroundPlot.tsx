@@ -13,28 +13,28 @@ const GroundPlot: React.FC<Props> = ({}) => {
         medzePts.push(new THREE.Vector2(0, 0));
 
         // Bottom line at the road
-        medzePts.push(new THREE.Vector2(190, 0));
+        medzePts.push(new THREE.Vector2(9.8, 2.05));
 
         // Up on the right side
-        medzePts.push(new THREE.Vector2(190, 100));
+        medzePts.push(new THREE.Vector2(8.9, 7.2));
 
         // Middle point up slant
-        medzePts.push(new THREE.Vector2(145, 105));
+        medzePts.push(new THREE.Vector2(6.05, 7.05));
         // Middle point up point
-        medzePts.push(new THREE.Vector2(105, 140));
+        medzePts.push(new THREE.Vector2(3.55, 9));
         // Middle point back point
-        medzePts.push(new THREE.Vector2(80, 120));
+        medzePts.push(new THREE.Vector2(2.975, 7.1));
 
         // Big Left block up to top left point
-        medzePts.push(new THREE.Vector2(-80, 250));
+        medzePts.push(new THREE.Vector2(-5.625, 13.2));
         // Big left block back down
-        medzePts.push(new THREE.Vector2(-110, 100));
+        medzePts.push(new THREE.Vector2(-6.05, 4.3));
         // Big left block back into the middle
-        medzePts.push(new THREE.Vector2(10, 90));
+        medzePts.push(new THREE.Vector2(0, 4.8));
 
         medzePts.push(new THREE.Vector2(0, 0));
 
-        for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(0.1);
+        for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(20); // 1 box in the land_map_grid is 20m
 
         const medzeShape = new THREE.Shape(medzePts);
 

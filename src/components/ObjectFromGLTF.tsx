@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {useLoader} from "react-three-fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 
@@ -11,9 +11,10 @@ interface Props {
 
 const ObjectFromGLTF: React.FC<Props> = ({file, position = [0, 0, 0], rotation = [0, 0, 0], scale = 1}) => {
     const gltf = useLoader(GLTFLoader, file);
+    const scene = useMemo(() => gltf.scene.clone(), [gltf]);
     return (
         <mesh rotation={rotation} position={position} scale={[scale, scale, scale]}>
-            <primitive object={gltf.scene}/>
+            <primitive object={scene}/>
         </mesh>
     )
 };

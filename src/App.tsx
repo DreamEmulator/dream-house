@@ -6,7 +6,8 @@ import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
 import {mapToPlot} from "./Helpers";
-import ObjectFromGLTF from "./components/ObjectFromGLTF";
+import PatchOfTrees from "./components/PatchOfTrees";
+import Bear from "./components/Bear";
 
 function App() {
     return (
@@ -26,7 +27,8 @@ function App() {
             <Sphere position={mapToPlot(-6.05, 4.3)}/>
             <Sphere position={mapToPlot(0, 4.8)}/>
             <Suspense fallback={null}>
-                <ObjectFromGLTF file={require('./objects/bear.gltf').default} scale={0.3} position={mapToPlot(6, 3)}/>
+                <Bear position={mapToPlot(8, 5)} scale={0.2}/>
+                <PatchOfTrees/>
             </Suspense>
             <GroundPlot/>
             <Controls/>

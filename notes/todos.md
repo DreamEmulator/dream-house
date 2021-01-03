@@ -1,0 +1,2 @@
+- [ ] Add scale
+- [ ] Add panning explanation

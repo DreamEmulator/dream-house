@@ -26,7 +26,7 @@ const Sphere: React.FC<Props> = ({}) => {
         <>
             <mesh ref={mesh}
                   rotation={[2, 0, 0]}
-                  position={[-10, 1, 10]}
+                  position={[0, 1, 0]}
                   scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
                   onClick={(e) => setActive(!active)}
                   onPointerOver={(e) => setHover(true)}

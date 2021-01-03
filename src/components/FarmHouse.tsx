@@ -9,7 +9,7 @@ interface Props {
 
 const FarmHouse: React.FC<Props> = (props) => {
 return (
-    <ObjectFromGLTF {...props}file={require('../objects/farmhouse_obj.gltf').default}/>
+    <ObjectFromGLTF {...props}file={require('../objects/farmhouse_obj.gltf').default} scale={1/35}/>
 )};
 
 export default FarmHouse;

@@ -8,7 +8,7 @@ interface Props {
 
 const Tree: React.FC<Props> = ({position}) => {
 return (
-    <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default} scale={1.1} position={position}/>
+    <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default} scale={0.1} position={position}/>
 )};
 
 export default Tree;

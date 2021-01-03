@@ -4,22 +4,32 @@ import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlot} from "./Helpers";
+import {mapToPlot, metersToUnits} from "./Helpers";
 import Bear from "./components/Bear";
 import Lake from "./components/Lake";
 import Tree from "./components/Tree";
 import FarmHouse from "./components/FarmHouse";
+import WorldPlane from "./components/WorldPlane";
+import BoxyHouse from "./components/BoxyHouse";
+import CubeOneM2 from "./components/CubeOneM2";
 
 function App() {
+    //  One Unit in ThreeJS is 20 meters
+    // The dimensions of the plot are approx:
+    // x = -6 till 9
+    // y = 0 till 14
     return (
         <>
             <Canvas camera={{
-                position: [0, 150, 100],
+                rotation:[0,0,190],
+                position: [0, 4, 6],
                 near: 0.1,
                 far: 500
             }}>
                 <Lighting/>
-                <Lake position={mapToPlot(-3, 8)}/>
+                <Lake position={mapToPlot(-2.5, 7)}/>
+                <CubeOneM2 />
+                <WorldPlane/>
                 <Suspense fallback={null}>
                     <Tree position={mapToPlot(-4.75, 6)}/>
                     <Tree position={mapToPlot(-4.75, 10)}/>
@@ -30,7 +40,7 @@ function App() {
                 </Suspense>
                 <Suspense fallback={null}>
                     <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
-                    <Bear position={mapToPlot(8, 3)} scale={0.2}/>
+                    <Bear position={mapToPlot(8 , 3)} scale={0.2}/>
                 </Suspense>
                 <GroundPlot/>
                 <Controls/>
@@ -39,6 +49,7 @@ function App() {
                 <p>Rotate = <span>👆</span></p>
                 <p>Pan = <span>✌️</span>️</p>
                 <p>Zoom = <span>🤏</span>️</p>
+                <a target='_blank' href='map_with_grid_and_coordinates.png'>Map</a>
             </div>
         </>
     );

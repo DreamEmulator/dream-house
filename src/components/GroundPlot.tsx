@@ -34,14 +34,14 @@ const GroundPlot: React.FC<Props> = ({}) => {
 
         medzePts.push(new THREE.Vector2(0, 0));
 
-        for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(20); // 1 box in the land_map_grid is 20m
+        // for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(20); // 1 box in the land_map_grid is 20m
 
         const medzeShape = new THREE.Shape(medzePts);
 
         return medzeShape;
     }, [])
     return (
-        <mesh rotation={[-(Math.PI / 2), 0, 0]}>
+        <mesh rotation={[-(Math.PI / 2), 0, 0]} position={[0,0.001,0]}>
             <shapeGeometry args={[shape]}/>
             <meshPhongMaterial color='lawngreen' side={THREE.DoubleSide}/>
         </mesh>

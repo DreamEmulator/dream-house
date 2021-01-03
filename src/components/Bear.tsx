@@ -9,7 +9,7 @@ interface Props {
 
 const Bear: React.FC<Props> = (props) => {
 return (
-    <ObjectFromGLTF {...props}file={require('../objects/bear.gltf').default}/>
+    <ObjectFromGLTF {...props} file={require('../objects/bear.gltf').default} scale={1/60}/>
 )};
 
 export default Bear;

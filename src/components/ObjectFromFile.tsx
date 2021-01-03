@@ -1,26 +1,29 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import {OBJLoader} from "three/examples/jsm/loaders/OBJLoader";
+import {mapToPlot} from "../Helpers";
 
-const ObjectFromFile: React.FC<Props> = ({file}) => {
-    const onload = () => console.log('Loaded!');
+interface Props {
+    file: string;
+    scale?: number;
+    position?: [number, number, number];
+    rotation?: [number, number, number];
+}
+
+const ObjectFromFile: React.FC<Props> = ({file, position= [0,0,0], rotation= [0,0,0], scale = 1}) => {
+    const [object, setObject] = useState(null);
+    const onload = (object: any) => setObject(object);
     const onProgress = (progressEvent: ProgressEvent) => console.log(`Loading ${Math.floor(progressEvent.loaded / progressEvent.total * 100)}%`);
     const onError = () => console.log('Error!');
-    const object = useMemo(() => new OBJLoader().load(file, onload, (progressEvent) => onProgress(progressEvent), onError)
+    useMemo(() => new OBJLoader().load(file, onload, (progressEvent) => onProgress(progressEvent), onError)
         , [file])
-
-    return null;
     return (
-        <mesh>
-            <planeBufferGeometry attach="geometry" args={[1, 1]}/>
-            <meshLambertMaterial attach="material" transparent>
-                <primitive attach="map" object={object}/>
-            </meshLambertMaterial>
+        <mesh rotation={rotation} position={position} scale={[scale, scale, scale]}>
+            {object && <primitive attach="map" object={object}/>}
+            <meshBasicMaterial color='white'/>
         </mesh>
     )
 };
 
 export default ObjectFromFile;
 
-interface Props {
-    file: string;
-}
+

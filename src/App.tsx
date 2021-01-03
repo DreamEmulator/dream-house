@@ -25,7 +25,7 @@ function App() {
             <Sphere position={mapToPlot(-5.625, 13.2)}/>
             <Sphere position={mapToPlot(-6.05, 4.3)}/>
             <Sphere position={mapToPlot(0, 4.8)}/>
-            <ObjectFromFile file={require('./objects/2020.obj').default}/>
+            <ObjectFromFile file={require('./objects/bear.obj').default} scale={0.3} position={mapToPlot(6, 3)}/>
             <GroundPlot/>
             <Controls/>
         </Canvas>

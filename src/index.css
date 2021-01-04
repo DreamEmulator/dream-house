@@ -18,7 +18,13 @@ body {
     right: 1vh;
 }
 
-#explainer span {
+#scale {
+    position: fixed;
+    bottom: 1vh;
+    left: 1vh;
+}
+
+#explainer span, #scale span {
     font-size: 32px;
 }
 

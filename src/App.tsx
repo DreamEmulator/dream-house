@@ -10,7 +10,6 @@ import Lake from "./components/Lake";
 import Tree from "./components/Tree";
 import FarmHouse from "./components/FarmHouse";
 import WorldPlane from "./components/WorldPlane";
-import BoxyHouse from "./components/BoxyHouse";
 import CubeOneM2 from "./components/CubeOneM2";
 
 function App() {
@@ -21,8 +20,8 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                rotation: [0, 0, 190],
-                position: [0, 4, 6],
+                rotation: [0, 10, 100],
+                position: [0, 1, 0],
                 near: 0.1,
                 far: 500
             }}>
@@ -42,17 +41,19 @@ function App() {
                 </Suspense>
                 <Suspense fallback={null}>
                     <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
-                    <Bear position={mapToPlotWithElevation({x:8.3, heightInMeters: 0.01,y:3})}/>
+                    <Bear position={mapToPlotWithElevation({x: 8.3, heightInMeters: 0.01, y: 3})}/>
                 </Suspense>
                 <GroundPlot/>
                 <Controls/>
             </Canvas>
+            <div id='scale'>
+                <p><span>⬜️</span> = 1m3</p>
+                <a target='_blank' href='map_with_grid_and_coordinates.png'>Map</a>
+            </div>
             <div id='explainer'>
-                <p><span>⬜️</span> bottom left = 1m3</p>
                 <p>Rotate = <span>👆</span></p>
                 <p>Pan = <span>✌️</span>️</p>
                 <p>Zoom = <span>🤏</span>️</p>
-                <a target='_blank' href='map_with_grid_and_coordinates.png'>Map</a>
             </div>
         </>
     );

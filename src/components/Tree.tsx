@@ -2,9 +2,10 @@ import React, {useRef} from 'react';
 import ObjectFromGLTF from "../objects/ObjectFromGLTF";
 import {useFrame} from "react-three-fiber";
 import {Group} from "three";
+import {deg2Rad} from "../Helpers";
 
 interface Props {
-    position: [number, number, number]
+    position: [number, number, number];
 }
 
 const Tree: React.FC<Props> = ({position}) => {
@@ -20,8 +21,7 @@ const Tree: React.FC<Props> = ({position}) => {
         }
     });
     return (
-        <group ref={group} onPointerUp={() => {growTree = !growTree;
-            console.log('growing!');}} scale={[scale, scale, scale]} position={position}>
+        <group ref={group} onPointerUp={() => {growTree = !growTree}} scale={[scale, scale, scale]} position={position} rotation={[0,(Math.random() - 0.5) * 100,0]}>
             <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default}/>
         </group>
     )

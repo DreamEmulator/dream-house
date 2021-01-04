@@ -48,6 +48,7 @@ function App() {
                 <Controls/>
             </Canvas>
             <div id='explainer'>
+                <p><span>⬜️</span> bottom left = 1m3</p>
                 <p>Rotate = <span>👆</span></p>
                 <p>Pan = <span>✌️</span>️</p>
                 <p>Zoom = <span>🤏</span>️</p>

@@ -4,9 +4,10 @@ import {deg2Rad} from "../Helpers";
 import {useFrame} from "react-three-fiber";
 
 interface Props {
+    showUFO : boolean
 }
 
-const House: React.FC<Props> = ({}) => {
+const UFO: React.FC<Props> = ({showUFO}) => {
 
     const width = 10 / 20;
     const height = 5 / 20;
@@ -19,30 +20,33 @@ const House: React.FC<Props> = ({}) => {
     }, []);
 
     const group = useRef<THREE.Group>();
+    let y = -1;
     useFrame(() => {
-        if (group?.current?.rotation) {
+        if (group?.current) {
             group.current.rotation.y += 0.01
+            y = showUFO ? Math.min(y + 0.01, 1) : Math.max(group.current.position.y - 0.01, -2);
+            group.current.position.y = y;
         }
     })
 
     return (
-        <group ref={group} position={[5, 1, -3]}>
-            <mesh position={[0, 1, 0]}>
+        <group ref={group} position={[5, y, -3]}>
+            <mesh position={[-0.5, 1, 0]}>
                 <meshPhongMaterial color='#6e638a'/>
                 <boxBufferGeometry args={[width, height, depth]}/>
                 <lineSegments args={[edges, lineMaterial]}/>
             </mesh>
-            <mesh position={[0, 1, 0]} rotation={[0, 0, deg2Rad(90)]}>
+            <mesh position={[-0.5, 1, 0]} rotation={[0, 0, deg2Rad(90)]}>
                 <meshPhongMaterial color='#6e638a'/>
                 <boxBufferGeometry args={[width, height, depth]}/>
                 <lineSegments args={[edges, lineMaterial]}/>
             </mesh>
-            <mesh position={[1, 1, 0]} rotation={[0, 0, 0]}>
+            <mesh position={[0.5, 1, 0]} rotation={[0, 0, 0]}>
                 <meshPhongMaterial color='#6e638a'/>
                 <boxBufferGeometry args={[width, height, depth]}/>
                 <lineSegments args={[edges, lineMaterial]}/>
             </mesh>
-            <mesh position={[0.5, 0.5, 0]}>
+            <mesh position={[0, 0.5, 0]}>
                 <meshPhongMaterial color='#f0f'/>
                 <coneGeometry args={[1, 1, 32]}/>
             </mesh>
@@ -50,4 +54,4 @@ const House: React.FC<Props> = ({}) => {
     )
 };
 
-export default House;
+export default UFO;

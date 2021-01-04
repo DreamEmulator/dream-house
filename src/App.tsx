@@ -4,7 +4,7 @@ import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlot, metersToUnits} from "./Helpers";
+import {mapToPlot, mapToPlotWithElevation, metersToUnits} from "./Helpers";
 import Bear from "./components/Bear";
 import Lake from "./components/Lake";
 import Tree from "./components/Tree";
@@ -21,16 +21,18 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                rotation:[0,0,190],
+                rotation: [0, 0, 190],
                 position: [0, 4, 6],
                 near: 0.1,
                 far: 500
             }}>
                 <Lighting/>
-                <Lake position={mapToPlot(-2.5, 7)}/>
-                <CubeOneM2 />
+                <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(30)}/>
+                <CubeOneM2/>
                 <WorldPlane/>
                 <Suspense fallback={null}>
+                    {/*<BoxyHouse position={mapToPlotWithElevation({x: 8.5, heightInMeters: 5, y: 4.5})}*/}
+                    {/*           size={{width: metersToUnits(6), height: metersToUnits(5), depth: metersToUnits(12.5)}} rotation={[0,90,0]}/>*/}
                     <Tree position={mapToPlot(-4.75, 6)}/>
                     <Tree position={mapToPlot(-4.75, 10)}/>
                     <Tree position={mapToPlot(-5.5, 8)}/>
@@ -40,7 +42,7 @@ function App() {
                 </Suspense>
                 <Suspense fallback={null}>
                     <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
-                    <Bear position={mapToPlot(8 , 3)} scale={0.2}/>
+                    <Bear position={mapToPlotWithElevation({x:8.3, heightInMeters: 0.01,y:3})}/>
                 </Suspense>
                 <GroundPlot/>
                 <Controls/>

@@ -30,7 +30,7 @@ const UFO: React.FC<Props> = ({showUFO}) => {
             y = showUFO ? Math.min(group.current.position.y + 0.01, 1) : Math.max(group.current.position.y - 0.01, -1.5);
             group.current.position.y = y;
         }
-    })
+    });
 
     return (
         <group ref={group} position={[5, y, -3]}>

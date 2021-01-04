@@ -20,8 +20,8 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                rotation: [0, 10, 100],
-                position: [0, 1, 0],
+                rotation: [90, 10, 30],
+                position: [-1, 0.5, 2],
                 near: 0.1,
                 far: 500
             }}>

@@ -7,11 +7,10 @@ import GroundPlot from "./components/GroundPlot";
 import {mapToPlot, mapToPlotWithElevation, metersToUnits} from "./Helpers";
 import Bear, {existentialBearPerspective} from "./components/Bear";
 import Lake from "./components/Lake";
-import Tree from "./components/Tree";
 import FarmHouse from "./components/FarmHouse";
 import WorldPlane from "./components/WorldPlane";
 import CubeOneM2 from "./components/CubeOneM2";
-import UFO from "./components/UFO";
+import Trees from "./components/Trees";
 
 function App() {
     //  One Unit in ThreeJS is 20 meters
@@ -30,14 +29,7 @@ function App() {
                 <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(30)}/>
                 <CubeOneM2/>
                 <WorldPlane/>
-                <Suspense fallback={null}>
-                    <Tree position={mapToPlot(-4.75, 6)}/>
-                    <Tree position={mapToPlot(-4.75, 10)}/>
-                    <Tree position={mapToPlot(-5.5, 8)}/>
-                    <Tree position={mapToPlot(8.5, 7)}/>
-                    <Tree position={mapToPlot(6, 7)}/>
-                    <Tree position={mapToPlot(9, 3)}/>
-                </Suspense>
+                <Trees/>
                 <Suspense fallback={null}>
                     <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
                     <Bear position={mapToPlotWithElevation({x: 8.3, heightInMeters: 0.01, y: 3})}/>

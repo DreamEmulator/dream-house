@@ -12,8 +12,6 @@ import FarmHouse from "./components/FarmHouse";
 import WorldPlane from "./components/WorldPlane";
 import CubeOneM2 from "./components/CubeOneM2";
 import House from "./components/House";
-import * as THREE from 'three';
-import {Vector3} from 'three';
 
 function App() {
     //  One Unit in ThreeJS is 20 meters
@@ -24,8 +22,7 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                rotation: [90, 10, 30],
-                position: [8.557029058379754 , 0.218699189592502, -3.3198212678698145 ],
+                position: [8.400934909715168 , 0.13034729878130913, -2.8635745868792397 ],
                 near: 0.1,
                 far: 500
             }}>

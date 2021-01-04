@@ -1,6 +1,7 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {extend, useFrame, useThree} from "react-three-fiber";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import {Vector3} from "three";
 
 extend({OrbitControls});
 
@@ -16,10 +17,11 @@ const Controls: React.FC<Props> = ({}) => {
     const controls = useRef<OrbitControls>();
     useFrame((state) => {
         controls?.current?.update()
-        // console.log(camera);
+
     });
+
     // @ts-ignore
-    return <orbitControls ref={controls} args={[camera, domElement]}/>
+    return <orbitControls ref={controls} target={[3, 0,-5]} args={[camera, domElement]} maxZoom={1}/>
 };
 
 export default Controls;

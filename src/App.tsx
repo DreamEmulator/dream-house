@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useRef} from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
@@ -11,17 +11,21 @@ import Tree from "./components/Tree";
 import FarmHouse from "./components/FarmHouse";
 import WorldPlane from "./components/WorldPlane";
 import CubeOneM2 from "./components/CubeOneM2";
+import House from "./components/House";
+import * as THREE from 'three';
+import {Vector3} from 'three';
 
 function App() {
     //  One Unit in ThreeJS is 20 meters
     // The dimensions of the plot are approx:
     // x = -6 till 9
     // y = 0 till 14
+
     return (
         <>
             <Canvas camera={{
                 rotation: [90, 10, 30],
-                position: [-1, 0.5, 2],
+                position: [8.557029058379754 , 0.218699189592502, -3.3198212678698145 ],
                 near: 0.1,
                 far: 500
             }}>
@@ -29,6 +33,7 @@ function App() {
                 <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(30)}/>
                 <CubeOneM2/>
                 <WorldPlane/>
+                <House/>
                 <Suspense fallback={null}>
                     {/*<BoxyHouse position={mapToPlotWithElevation({x: 8.5, heightInMeters: 5, y: 4.5})}*/}
                     {/*           size={{width: metersToUnits(6), height: metersToUnits(5), depth: metersToUnits(12.5)}} rotation={[0,90,0]}/>*/}

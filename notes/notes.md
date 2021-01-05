@@ -26,3 +26,7 @@ https://app.netlify.com/sites/dream-house-3d/deploys
 `obj2gltf -i bear.obj`
 https://github.com/CesiumGS/obj2gltf
 https://github.com/pmndrs/gltfjsx
+
+
+**Creating low poly models**
+https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in-blender--cg-31770

@@ -27,6 +27,9 @@ https://app.netlify.com/sites/dream-house-3d/deploys
 https://github.com/CesiumGS/obj2gltf
 https://github.com/pmndrs/gltfjsx
 
+https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in-blender--cg-31770
+
 
 **Creating low poly models**
 https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in-blender--cg-31770
+

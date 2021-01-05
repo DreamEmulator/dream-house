@@ -33,3 +33,6 @@ https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in
 **Creating low poly models**
 https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in-blender--cg-31770
 
+Awesome for pond: Check from line 159
+https://codepen.io/carrot-e/pen/WGkJBZ 
+

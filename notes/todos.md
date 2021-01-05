@@ -1,2 +1,3 @@
-- [ ] Add scale
-- [ ] Add panning explanation
+- [x] Add scale
+- [x] Add panning explanation
+- [ ] Make low poly fence to surround the perimeter

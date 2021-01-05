@@ -1,9 +1,10 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import * as THREE from 'three';
-import {Geometry, Mesh} from 'three';
+import {DoubleSide, Geometry, Mesh} from 'three';
 import {useFrame} from "react-three-fiber";
 import {metersToUnits} from "../Helpers";
 import {Position} from "../types/defaults";
+import {Colors} from "../types/Colors";
 
 interface Props {
     position?: Position;
@@ -12,15 +13,6 @@ interface Props {
 type WaveVector = { x: number, y: number, z: number, ang: number, amp: number, speed: number };
 
 const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
-    // Setup the Scene
-    const Colors = {
-        red: 0xf25346,
-        white: 0xd8d0d1,
-        brown: 0x59332e,
-        pink: 0xf5986E,
-        brownDark: 0x23190f,
-        blue: 0x68c3c0
-    };
 
     const mesh = useRef<Mesh<Geometry>>();
 
@@ -49,9 +41,9 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
                     // a random angle
                     ang: Math.random() * Math.PI * 2,
                     // a random distance
-                    amp: metersToUnits(1) + Math.random() * metersToUnits(3),
-                    // a random speed between 0.016 and 0.048 radians / frame
-                    speed: 0.016 + Math.random() * 0.032
+                    amp: metersToUnits(1) + Math.random() * metersToUnits(2),
+                    // a random speed between 0.006 and 0.036 radians / frame
+                    speed: 0.006 + Math.random() * 0.020
                 });
             }
 
@@ -93,14 +85,14 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
             // unless we add this line
             mesh.current.geometry.verticesNeedUpdate = true;
 
-            mesh.current.rotation.z += .005;
+            // mesh.current.rotation.z += .005;
         }
     });
     return (
         <mesh ref={mesh} position={position} receiveShadow
-              matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)}>
-            <meshPhongMaterial color={Colors.blue} transparent opacity={.8}/>
-            <cylinderGeometry args={[2, 2, 2, 10, 10]}/>
+              matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)} >
+            <meshPhongMaterial color={Colors.blue} transparent flatShading opacity={.8} side={DoubleSide}/>
+            <planeGeometry args={[2.25,2.5,10,20]}/>
         </mesh>
     )
 };

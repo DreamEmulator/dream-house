@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import * as THREE from 'three';
 import {metersToUnits} from "../Helpers";
-import UFO from "./UFO";
+import {Colors} from "../types/Colors";
 
 interface Props {
     position: [number, number, number];
@@ -21,7 +21,7 @@ const Lake: React.FC<Props> = ({position, radius = metersToUnits(20)}) => {
         <>
         <mesh rotation={[-(Math.PI / 2), 0, 0]} position={position}>
             <shapeGeometry args={[circleShape]}/>
-            <meshPhongMaterial color='#1dbefb'/>
+            <meshPhongMaterial color={Colors.blue}/>
         </mesh>
         </>
     )

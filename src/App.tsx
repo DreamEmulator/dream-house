@@ -27,8 +27,8 @@ function App() {
                 far: 500
             }}>
                 <Lighting/>
-                <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(30)}/>
-                <Waves position={[-2.5, -1.75, -7.5]}/>
+                <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(33)}/>
+                <Waves position={[-2.5, 0.05, -7.5]}/>
                 <CubeOneM2/>
                 <WorldPlane/>
                 <Trees/>

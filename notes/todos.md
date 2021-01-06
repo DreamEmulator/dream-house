@@ -1,3 +1,5 @@
 - [x] Add scale
 - [x] Add panning explanation
 - [ ] Make low poly fence to surround the perimeter
+- [x] Make low poly pond and grass using the code pen for the sea
+- [ ] Add curvesegments to the custom shape geometry (heart f.i.) and extract a vertices height randomizer function, then apply tha to the shape geomtery to create a random terrain: https://threejs.org/docs/#api/en/geometries/ShapeGeometry

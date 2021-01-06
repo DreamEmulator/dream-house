@@ -1,5 +1,7 @@
 **Three JS**
 
+Editable overview of primitives:
+https://threejsfundamentals.org/threejs/lessons/threejs-primitives.html
 
 https://threejsfundamentals.org/
 
@@ -8,6 +10,12 @@ https://dev.to/sanderdebr/let-s-build-3d-procedural-landscape-with-react-and-thr
 https://blog.logrocket.com/3d-rendering-in-the-browser-with-react-three-fiber/
 
 https://gist.github.com/vinitsaboo/9dd99684bea6fd2486cb5115e92eb33c
+
+Explanation overview of Geometries:
+http://blog.cjgammon.com/threejs-geometry
+
+Create terrain (last example):
+https://threejsfundamentals.org/threejs/lessons/threejs-custom-geometry.html
 
 **Fiber**
 
@@ -36,3 +44,5 @@ https://cgi.tutsplus.com/tutorials/secrets-to-creating-low-poly-illustrations-in
 Awesome for pond: Check from line 159
 https://codepen.io/carrot-e/pen/WGkJBZ 
 
+Just the waves
+https://codepen.io/kasari/pen/qoXPKz?editors=0010

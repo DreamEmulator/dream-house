@@ -1,11 +1,13 @@
 import React, {useMemo} from 'react';
 import * as THREE from "three";
+import {Shape, ShapeGeometry} from "three";
 
 interface Props {
 }
 
 const GroundPlot: React.FC<Props> = ({}) => {
-    const shape = useMemo(() => {
+
+    const {edges, lineMaterial} = useMemo(() => {
 
         const medzePts = [];
 
@@ -36,14 +38,16 @@ const GroundPlot: React.FC<Props> = ({}) => {
 
         // for (let i = 0; i < medzePts.length; i++) medzePts[i].multiplyScalar(20); // 1 box in the land_map_grid is 20m
 
-        const medzeShape = new THREE.Shape(medzePts);
 
-        return medzeShape;
-    }, [])
+        const geometry = new ShapeGeometry(new Shape(medzePts));
+        return {
+            edges: new THREE.EdgesGeometry(geometry),
+            lineMaterial: new THREE.LineBasicMaterial({color: 0xffffff})
+        }
+    }, []);
     return (
-        <mesh rotation={[-(Math.PI / 2), 0, 0]} position={[0,0.001,0]}>
-            <shapeGeometry args={[shape]}/>
-            <meshPhongMaterial color='lawngreen' side={THREE.DoubleSide}/>
+        <mesh rotation={[-(Math.PI / 2), 0, 0]} position={[0, 0.001, 0]}>
+            <lineSegments args={[edges, lineMaterial]}/>
         </mesh>
     )
 };

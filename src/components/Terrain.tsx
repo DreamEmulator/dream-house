@@ -91,8 +91,9 @@ const Terrain: React.FC<Props> = () => {
         imgLoader.load(require('../assets/img/heightmap-32x32.jpg').default, createHeightmap);
     }, []);
 
+
     return (
-        <mesh position={[-width / 2.75, -3.65, -height / 1.5]}>
+        <mesh position={[-width / 2.75, -4, -height / 1.5]}>
             <geometry ref={geometry}/>
             <meshPhongMaterial flatShading color={Colors.green} side={DoubleSide}/>
         </mesh>

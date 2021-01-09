@@ -88,12 +88,12 @@ const Terrain: React.FC<Props> = () => {
         // extract the data from the image by drawing it to a canvas
         // and calling getImageData
         const imgLoader = new THREE.ImageLoader();
-        imgLoader.load(require('../assets/img/heightmap-32x32.jpg').default, createHeightmap);
+        imgLoader.load(require('../assets/img/heat_map_32x32.jpg').default, createHeightmap);
     }, []);
 
 
     return (
-        <mesh position={[-width / 2.75, -4, -height / 1.5]}>
+        <mesh position={[-width / 2, 0, -height / 1.5]}>
             <geometry ref={geometry}/>
             <meshPhongMaterial flatShading color={Colors.green} side={DoubleSide}/>
         </mesh>

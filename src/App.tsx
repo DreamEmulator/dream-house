@@ -8,14 +8,13 @@ import {mapToPlot, mapToPlotWithElevation, metersToUnits} from "./Helpers";
 import Bear, {existentialBearPerspective} from "./components/Bear";
 import Lake from "./components/Lake";
 import FarmHouse from "./components/FarmHouse";
-import WorldPlane from "./components/WorldPlane";
 import CubeOneM2 from "./components/CubeOneM2";
 import Trees from "./components/Trees";
 import Waves from "./components/Waves";
 import Terrain from "./components/Terrain";
 
 function App() {
-    //  One Unit in ThreeJS is 20 meters
+    //  One Unit in ThreeJS is 1 meter
     // The dimensions of the plot are approx:
     // x = -6 till 9
     // y = 0 till 14
@@ -24,18 +23,18 @@ function App() {
         <>
             <Canvas camera={{
                 position: existentialBearPerspective,
-                near: 0.1,
-                far: 500
+                near: 1,
+                far: 10000
             }}>
                 <Lighting/>
-                <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(33)}/>
-                <Waves position={[-2.5, 0.05, -7.5]}/>
+                <Lake position={mapToPlot(-2.5*20, 7.5*20)} radius={33}/>
+                <Waves position={[-2.5*20, 0.05*20, -7.5*20]}/>
                 <CubeOneM2/>
 
                 <Trees/>
                 <Suspense fallback={null}>
-                    <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
-                    <Bear position={mapToPlotWithElevation({x: 8.3, heightInMeters: 0.01, y: 3})}/>
+                    <FarmHouse position={mapToPlot(8*20, 5*20)} rotation={[0, 90, 0]}/>
+                    <Bear position={mapToPlotWithElevation({x: 8.3*20, heightInMeters: 1, y: 3*20})}/>
                     <Terrain/>
                 </Suspense>
                 <GroundPlot/>

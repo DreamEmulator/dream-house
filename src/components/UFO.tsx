@@ -9,9 +9,9 @@ interface Props {
 
 const UFO: React.FC<Props> = ({showUFO}) => {
 
-    const width = 10 / 20;
-    const height = 5 / 20;
-    const depth = 3 / 20;
+    const width = 10;
+    const height = 5;
+    const depth = 3;
     const {edges, lineMaterial} = useMemo(() => {
         return {
             edges: new THREE.EdgesGeometry(new THREE.BoxBufferGeometry(width, height, depth)),
@@ -33,9 +33,9 @@ const UFO: React.FC<Props> = ({showUFO}) => {
     });
 
     return (
-        <group ref={group} position={[5, y, -3]}>
+        <group ref={group} position={[5*20, y*20, -3*20]}>
             {/*Plus sign*/}
-            <group position={[-0.5, 1, 0]} onPointerUp={() => rotateClockwise = true}>
+            <group position={[-0.5*20, 1*20, 0*20]} onPointerUp={() => rotateClockwise = true}>
                 <mesh>
                     <meshPhongMaterial color='#6e638a'/>
                     <boxBufferGeometry args={[width, height, depth]}/>
@@ -48,14 +48,14 @@ const UFO: React.FC<Props> = ({showUFO}) => {
                 </mesh>
             </group>
             {/*Minus sign*/}
-            <mesh onPointerUp={() => rotateClockwise = false} position={[0.5, 1, 0]} rotation={[0, 0, 0]}>
+            <mesh onPointerUp={() => rotateClockwise = false} position={[0.5*20, 1*20, 0*20]} rotation={[0, 0, 0]}>
                 <meshPhongMaterial color='#6e638a'/>
                 <boxBufferGeometry args={[width, height, depth]}/>
                 <lineSegments args={[edges, lineMaterial]}/>
             </mesh>
-            <mesh position={[0, 0.5, 0]}>
+            <mesh position={[0*20, 0.5*20, 0*20]}>
                 <meshPhongMaterial color='#f0f'/>
-                <coneGeometry args={[1, 1, 32]}/>
+                <coneGeometry args={[1*20, 1*20, 32*20]}/>
             </mesh>
         </group>
     )

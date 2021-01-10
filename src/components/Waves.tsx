@@ -92,7 +92,7 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
         <mesh ref={mesh} position={position} receiveShadow
               matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)} >
             <meshPhongMaterial color={Colors.blue} transparent flatShading opacity={.8} side={DoubleSide}/>
-            <planeGeometry args={[2.25,2.5,10,20]}/>
+            <planeGeometry args={[2.25*20,2.5*20,10*20,20*20]}/>
         </mesh>
     )
 };

@@ -11,7 +11,6 @@ const Terrain: React.FC<Props> = () => {
     const [{width, height}, setWidthAndHeight] = useState({width: 0, height: 0});
 
     useEffect(() => {
-        console.log('Effect');
         const createHeightmap = (image: HTMLImageElement) => {
             const ctx = document.createElement('canvas').getContext('2d');
             if (!ctx) throw Error('Failed to load terrain heatmap!')
@@ -88,7 +87,7 @@ const Terrain: React.FC<Props> = () => {
         // extract the data from the image by drawing it to a canvas
         // and calling getImageData
         const imgLoader = new THREE.ImageLoader();
-        imgLoader.load(require('../assets/img/heat_map_32x32.jpg').default, createHeightmap);
+        imgLoader.load(require('../assets/img/heightmap-480x480.png').default, createHeightmap);
     }, []);
 
 

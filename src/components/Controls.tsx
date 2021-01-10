@@ -17,7 +17,7 @@ const Controls: React.FC<Props> = ({}) => {
     const controls = useRef<OrbitControls>();
     useFrame((state) => {
         controls?.current?.update()
-
+        // console.log(camera.position);
     });
 
     // @ts-ignore

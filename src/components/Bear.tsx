@@ -10,9 +10,9 @@ interface Props {
     rotation?: [number, number, number];
 }
 
-export const existentialBearPerspective: [number, number, number] = [8.400934909715168, 0.13034729878130913, -2.8635745868792397]
+export const existentialBearPerspective: [number, number, number] = [168.8127895358966, 3.167992936781241, -61.84091803111395];
 
-const Bear: React.FC<Props> = ({scale = 0.002, position = [0, 0, 0], rotation = [0, 0, 0]}) => {
+const Bear: React.FC<Props> = ({scale = 0.002 * 20, position = [0, 0, 0], rotation = [0, 0, 0]}) => {
     // At scale 0.002 the bear is approx 1.90m tall
 
     const {camera} = useThree();

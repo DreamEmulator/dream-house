@@ -9,14 +9,14 @@ interface Props {
 }
 
 const Tree: React.FC<Props> = ({position}) => {
-//    Trees are approx 4 meters high when scale = 0.0075
+//    Trees are approx 4 meters high when scale = 0.15
     const group = useRef<Group>();
     let growTree = false;
-    let scale = 0.0075;
+    let scale = 0.15;
     useFrame(() => {
         if (group?.current) {
             // Grow tree
-            scale = growTree ? Math.min(group.current.scale.x + 0.0001, 0.2) : Math.max(group.current.scale.x - 0.001, 0.0075);
+            scale = growTree ? Math.min(group.current.scale.x + (0.0001*20), (0.2*20)) : Math.max(group.current.scale.x - (0.001*20), (0.0075*20));
             group.current.scale.set(scale,scale,scale);
         }
     });

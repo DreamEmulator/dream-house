@@ -7,7 +7,7 @@ interface Props {
     size: { width: number, height: number, depth: number };
 }
 
-const BoxyHouse: React.FC<Props> = ({position = [0, 1, 0], rotation = [0, 0, 0], scale = 1, size}) => {
+const BoxyHouse: React.FC<Props> = ({position = [0, 1 *20, 0], rotation = [0, 0, 0], scale = 1, size}) => {
     return (
         <mesh position={position} rotation={rotation} scale={[scale,scale,scale]}>
             <boxBufferGeometry args={[size.width, size.height, size.depth]}/>

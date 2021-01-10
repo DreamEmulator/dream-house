@@ -5,22 +5,28 @@ interface Props {
 }
 
 const Lighting: React.FC<Props> = ({}) => {
-    const pointLight = useRef<THREE.PointLight>();
+    const pointLight_01 = useRef<THREE.PointLight>();
+    const pointLight_02 = useRef<THREE.PointLight>();
 
     const {camera} = useThree();
 
     useFrame(() => {
-        if (pointLight.current?.position) {
-            pointLight.current.position.x += 1;
-            pointLight.current.position.y += 1;
-            pointLight.current.position.z += 1;
+        if (pointLight_01.current?.position && pointLight_01.current.position.z < 200) {
+            pointLight_01.current.position.x += 1;
+            pointLight_01.current.position.y += 1;
+            pointLight_01.current.position.z += 1;
         }
-        // console.log('camera.rotation',camera.rotation);
-        // console.log('camera.position',camera.position);
-        // console.log('camera',camera);
+        if (pointLight_02.current?.position && pointLight_02.current.position.z > -200) {
+            pointLight_02.current.position.x -= 1;
+            pointLight_02.current.position.y += 1;
+            pointLight_02.current.position.z -= 1;
+        }
     });
     return (
-        <pointLight ref={pointLight}/>
+        <group>
+            <pointLight ref={pointLight_01} intensity={0.95}/>
+            <pointLight ref={pointLight_02} intensity={0.015}/>
+        </group>
     )
 };
 

@@ -10,25 +10,25 @@ const Trees: React.FC<Props> = ({}) => {
     return (
         <Suspense fallback={null}>
             {/*At the Lake*/}
-            <PatchOfTrees position={mapToPlot(-5, 4.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-6, 5.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-6, 4)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-5*20, 4.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-6*20, 5.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-6*20, 4*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
 
-            <PatchOfTrees position={mapToPlot(-5.5, 6.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-6, 7.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-6, 8)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-5.5*20, 6.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-6*20, 7.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-6*20, 8*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
 
-            <PatchOfTrees position={mapToPlot(-5.5, 8.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-6, 9.5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-5, 10)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-5.5*20, 8.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-6*20, 9.5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-5*20, 10*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
 
-            <PatchOfTrees position={mapToPlot(-4, 10)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(0, 6)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(-1, 5)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-4*20, 10*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(0*20, 6*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(-1*20, 5*20)} amount={30} patchSize={metersToUnits(30)} rotation={5.5}/>
 
             {/*At the house*/}
-            <PatchOfTrees position={mapToPlot(1, 1)} amount={200} patchSize={metersToUnits(100)} rotation={5.5}/>
-            <PatchOfTrees position={mapToPlot(3, 1)} amount={200} patchSize={metersToUnits(100)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(1*20, 1*20)} amount={200} patchSize={metersToUnits(100)} rotation={5.5}/>
+            <PatchOfTrees position={mapToPlot(3*20, 1*20)} amount={200} patchSize={metersToUnits(100)} rotation={5.5}/>
 
         </Suspense>
     )

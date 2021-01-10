@@ -23,7 +23,7 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                position: existentialBearPerspective,
+                position: [143.6827808262251,3.489949670250107,-45.364732594329794],
                 near: 1,
                 far: 10000
             }}>

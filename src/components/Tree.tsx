@@ -12,28 +12,32 @@ const Tree: React.FC<Props> = ({position}) => {
     const initialScale = 0.16;
     const minScale = 0.15;
     const maxScale = 1;
-    const growSpeed = 0.0005;
+    const growSpeed = 0.00025;
 
     const group = useRef<Group>();
-    let growTree = useRef(false);
+    let startGrowing = useRef(false);
+    let growTaller = useRef(true);
     let scale = useRef(initialScale);
 
     useEffect(() => {
-        setTimeout(() => growTree.current = true, Math.random() * 1000_000)
-    }, []);
+        setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_000);
+    }, [startGrowing.current]);
 
     useFrame(() => {
-        if (group?.current) {
+        if (startGrowing.current && group.current) {
             // Grow tree
-            if(group.current?.scale.x === minScale || group.current?.scale.x === maxScale) growTree.current = !growTree.current;
-            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed + 0.001, minScale);
+            if(group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
+            growTree.current = !growTree.current;
+            startGrowing.current = !startGrowing.current;}
+            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed - 0.001, minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });
     return (
         <group ref={group} onPointerUp={() => {
-            growTree.current = !growTree.current
-        }} scale={[scale.current, scale.current, scale.current]} position={position} rotation={[0, (Math.random() - 0.5) * 100, 0]}>
+            growTaller.current = !growTaller.current
+        }} scale={[scale.current, scale.current, scale.current]} position={position}
+               rotation={[0, (Math.random() - 0.5) * 100, 0]}>
             <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default}/>
         </group>
     )

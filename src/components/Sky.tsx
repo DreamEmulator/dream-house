@@ -13,15 +13,15 @@ const Sky: React.FC<Props> = ({}) => {
     const cloud_03 = useRef<Mesh<Geometry>>();
 
     // Initial positions
-    const {int_c01, int_c02, int_c03} = useMemo(() => ({
-        int_c01: cloud_01.current?.position.x,
-        int_c02: cloud_02.current?.position.x,
-        int_c03: cloud_03.current?.position.x,
-    }), []);
+
+        const int_c01 = 30;
+        const int_c02 = 80;
+        const int_c03 = -20;
+
 
     const direction_c01 = useRef<boolean>(true);
     const direction_c02 = useRef<boolean>(true);
-    const direction_c03 = useRef<boolean>(true);
+    const direction_c03 = useRef<boolean>(false);
 
     useFrame(() => {
         if (cloud_01.current && int_c01 && cloud_02.current && int_c02 && cloud_03.current && int_c03) {
@@ -39,19 +39,17 @@ const Sky: React.FC<Props> = ({}) => {
             if (direction_c03.current) cloud_03.current.position.x += 0.01;
             else cloud_03.current.position.x -= 0.01;
         }
-        // Move cloud 1
-
     });
 
     return (
         <Suspense fallback={null}>
-            <mesh ref={cloud_01} position={[30, 30, -40]} scale={scale(4)}>
+            <mesh ref={cloud_01} position={[int_c01, 30, -40]} scale={scale(4)}>
                 <ObjectFromGLTF file={require('../objects/cloud.glb').default}/>
             </mesh>
-            <mesh ref={cloud_02} position={[80, 80, -300]} scale={scale(4)}>
+            <mesh ref={cloud_02} position={[int_c02, 80, -300]} scale={scale(4)}>
                 <ObjectFromGLTF file={require('../objects/cloud.glb').default}/>
             </mesh>
-            <mesh ref={cloud_03} position={[80, 15, -100]} scale={scale(4)}>
+            <mesh ref={cloud_03} position={[int_c03, 15, -100]} scale={scale(4)}>
                 <ObjectFromGLTF file={require('../objects/cloud.glb').default}/>
             </mesh>
         </Suspense>

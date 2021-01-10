@@ -41,7 +41,7 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
                     // a random angle
                     ang: Math.random() * Math.PI * 2,
                     // a random distance
-                    amp: metersToUnits(1) + Math.random() * metersToUnits(2),
+                    amp: metersToUnits(1) + Math.random() * metersToUnits(1),
                     // a random speed between 0.006 and 0.036 radians / frame
                     speed: 0.006 + Math.random() * 0.020
                 });
@@ -74,8 +74,6 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
                         // increment the angle for the next frame
                         vprops.ang += vprops.speed;
                     }
-
-
                 }
             }
 
@@ -92,7 +90,7 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0]}) => {
         <mesh ref={mesh} position={position} receiveShadow
               matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)} >
             <meshPhongMaterial color={Colors.blue} transparent flatShading opacity={.8} side={DoubleSide}/>
-            <planeGeometry args={[2.25*20,2.5*20,10*20,20*20]}/>
+            <planeGeometry args={[2.25*20,2.5*20,30,20]}/>
         </mesh>
     )
 };

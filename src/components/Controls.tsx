@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from "react";
 import {extend, useFrame, useThree} from "react-three-fiber";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {Vector3} from "three";
+import {deg2Rad} from "../Helpers";
 
 extend({OrbitControls});
 
@@ -19,6 +20,15 @@ const Controls: React.FC<Props> = ({}) => {
         controls?.current?.update()
         // console.log(camera.position);
     });
+
+    useEffect(()=>{
+        if(controls.current){
+            controls.current.minDistance = 2;
+            controls.current.maxDistance = 100;
+            controls.current.maxPolarAngle = deg2Rad(88.5);
+            controls.current.maxAzimuthAngle = deg2Rad(80);
+        }
+    },[controls]);
 
     // @ts-ignore
     return <orbitControls ref={controls} target={[3, 0,-5]} args={[camera, domElement]} maxZoom={1}/>

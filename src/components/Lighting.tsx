@@ -22,6 +22,9 @@ const Lighting: React.FC<Props> = ({}) => {
             pointLight_02.current.position.z -= 1;
         }
     });
+    useFrame(()=>{if(camera && pointLight_02.current){
+        pointLight_02.current.position.set(camera.position.x, camera.position.y, camera.position.z);
+    }})
     return (
         <group>
             <pointLight ref={pointLight_01} intensity={0.95}/>

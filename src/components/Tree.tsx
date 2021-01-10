@@ -8,10 +8,14 @@ interface Props {
 }
 
 const Tree: React.FC<Props> = ({position}) => {
-//    Trees are approx 4 meters high when scale = 0.15
+    // Trees are approx 4 meters high when scale = 0.15
+    const minScale = 0.15;
+    const maxScale = 1.5;
+    const growSpeed = 0.0005;
+
     const group = useRef<Group>();
     let growTree = useRef(false);
-    let scale = 0.15;
+    let scale = useRef(minScale);
 
     useEffect(() => {
         setTimeout(() => growTree.current = true, Math.random() * 1000_00)
@@ -20,15 +24,15 @@ const Tree: React.FC<Props> = ({position}) => {
     useFrame(() => {
         if (group?.current) {
             // Grow tree
-            if(group.current?.scale.x < 0.15 || group.current?.scale.x > 2) growTree.current = !growTree.current;
-            scale = growTree.current ? Math.min(group.current.scale.x + 0.0005, 2) : Math.max(group.current.scale.x - 0.0005, 0.15);
-            group.current.scale.set(scale, scale, scale);
+            if(group.current?.scale.x < minScale || group.current?.scale.x > 2) growTree.current = !growTree.current;
+            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed, minScale);
+            group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });
     return (
         <group ref={group} onPointerUp={() => {
             growTree.current = !growTree.current
-        }} scale={[scale, scale, scale]} position={position} rotation={[0, (Math.random() - 0.5) * 100, 0]}>
+        }} scale={[scale.current, scale.current, scale.current]} position={position} rotation={[0, (Math.random() - 0.5) * 100, 0]}>
             <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default}/>
         </group>
     )

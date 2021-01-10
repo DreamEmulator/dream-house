@@ -9,13 +9,14 @@ interface Props {
 
 const Tree: React.FC<Props> = ({position}) => {
     // Trees are approx 4 meters high when scale = 0.15
+    const initialScale = 0.16;
     const minScale = 0.15;
     const maxScale = 1;
     const growSpeed = 0.0005;
 
     const group = useRef<Group>();
     let growTree = useRef(false);
-    let scale = useRef(minScale);
+    let scale = useRef(initialScale);
 
     useEffect(() => {
         setTimeout(() => growTree.current = true, Math.random() * 1000_000)
@@ -24,8 +25,8 @@ const Tree: React.FC<Props> = ({position}) => {
     useFrame(() => {
         if (group?.current) {
             // Grow tree
-            if(group.current?.scale.x < minScale || group.current?.scale.x > maxScale) growTree.current = !growTree.current;
-            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale + 0.1) : Math.max(group.current.scale.x - growSpeed, minScale - 0.1);
+            if(group.current?.scale.x === minScale || group.current?.scale.x === maxScale) growTree.current = !growTree.current;
+            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed, minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });

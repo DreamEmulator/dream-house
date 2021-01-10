@@ -12,6 +12,7 @@ import WorldPlane from "./components/WorldPlane";
 import CubeOneM2 from "./components/CubeOneM2";
 import Trees from "./components/Trees";
 import Waves from "./components/Waves";
+import Terrain from "./components/Terrain";
 
 function App() {
     //  One Unit in ThreeJS is 20 meters
@@ -30,11 +31,12 @@ function App() {
                 <Lake position={mapToPlot(-2.5, 7.5)} radius={metersToUnits(33)}/>
                 <Waves position={[-2.5, 0.05, -7.5]}/>
                 <CubeOneM2/>
-                <WorldPlane/>
+
                 <Trees/>
                 <Suspense fallback={null}>
                     <FarmHouse position={mapToPlot(8, 5)} rotation={[0, 90, 0]}/>
                     <Bear position={mapToPlotWithElevation({x: 8.3, heightInMeters: 0.01, y: 3})}/>
+                    <Terrain/>
                 </Suspense>
                 <GroundPlot/>
                 <Controls/>

@@ -27,15 +27,16 @@ const Tree: React.FC<Props> = ({position}) => {
         if (startGrowing.current && group.current) {
             // Grow tree
             if(group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
-            growTree.current = !growTree.current;
+            growTaller.current = !growTaller.current;
             startGrowing.current = !startGrowing.current;}
-            scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed - 0.001, minScale);
+            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed - 0.001, minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });
     return (
         <group ref={group} onPointerUp={() => {
-            growTaller.current = !growTaller.current
+            growTaller.current = !growTaller.current;
+            startGrowing.current = true;
         }} scale={[scale.current, scale.current, scale.current]} position={position}
                rotation={[0, (Math.random() - 0.5) * 100, 0]}>
             <ObjectFromGLTF file={require('../objects/lowpoly_tree.gltf').default}/>

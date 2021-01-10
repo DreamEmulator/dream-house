@@ -35,7 +35,7 @@ const Tree: React.FC<Props> = ({position}) => {
     });
     return (
         <group ref={group} onPointerUp={() => {
-            growTaller.current = true;
+            growTaller.current = !growTaller.current;
             startGrowing.current = true;
         }} scale={[scale.current, scale.current, scale.current]} position={position}
                rotation={[0, (Math.random() - 0.5) * 100, 0]}>

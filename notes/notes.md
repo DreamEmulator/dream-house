@@ -46,3 +46,9 @@ https://codepen.io/carrot-e/pen/WGkJBZ
 
 Just the waves
 https://codepen.io/kasari/pen/qoXPKz?editors=0010
+
+
+**Very interesting Geology links**
+https://search.earthdata.nasa.gov/search?q=latvia&sb[0]=21.22559%2C56.83385%2C21.91992%2C57.36095&m=57.68001763808498!18.761813109761015!3!0!0!0%2C2
+http://www.smartjava.org/content/threejs-render-real-world-terrain-heightmap-using-open-data/
+https://blog.mastermaps.com/2013/10/terrain-building-with-threejs.html

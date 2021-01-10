@@ -4,7 +4,7 @@ import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlot, mapToPlotWithElevation} from "./Helpers";
+import {mapToPlotWithElevation} from "./Helpers";
 import Bear, {existentialBearPerspective} from "./components/Bear";
 import Lake from "./components/Lake";
 import FarmHouse from "./components/FarmHouse";
@@ -12,6 +12,7 @@ import CubeOneM2 from "./components/CubeOneM2";
 import Trees from "./components/Trees";
 import Waves from "./components/Waves";
 import Mountains from "./components/Mountains";
+import Sky from "./components/Sky";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -30,14 +31,14 @@ function App() {
                 <Lake position={[-50, 2, -150]} radius={33}/>
                 <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
                 <CubeOneM2/>
-
                 <Trees/>
                 <Suspense fallback={null}>
-                    <FarmHouse position={mapToPlot(8 * 20, 5 * 20)} rotation={[0, 90, 0]}/>
+                    <FarmHouse position={[160, 2, -100]} rotation={[0, 90, 0]}/>
                     <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
                 </Suspense>
-                <Mountains/>
+                <Sky/>
                 <GroundPlot/>
+                <Mountains/>
                 <Controls/>
             </Canvas>
             <div id='scale'>

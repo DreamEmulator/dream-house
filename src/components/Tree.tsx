@@ -29,7 +29,7 @@ const Tree: React.FC<Props> = ({position}) => {
             if(group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
             growTaller.current = !growTaller.current;
             startGrowing.current = !startGrowing.current;}
-            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed - 0.001, minScale);
+            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed * 2 , minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });

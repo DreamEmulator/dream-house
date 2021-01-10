@@ -2,4 +2,5 @@
 - [x] Add panning explanation
 - [ ] Make low poly fence to surround the perimeter
 - [x] Make low poly pond and grass using the code pen for the sea
-- [ ] Add curvesegments to the custom shape geometry (heart f.i.) and extract a vertices height randomizer function, then apply tha to the shape geomtery to create a random terrain: https://threejs.org/docs/#api/en/geometries/ShapeGeometry
+- [x] Add curvesegments to the custom shape geometry (heart f.i.) and extract a vertices height randomizer function, then apply tha to the shape geomtery to create a random terrain: https://threejs.org/docs/#api/en/geometries/ShapeGeometry
+- [ ] Elevations of the trees etc following the heights of the terrain. Loop over all the vertices round them to 0.1 and map them to an object where the position is the key and the average height (hm) is the value. Then let everything check its position and update it's Y axis. You can find an object's position by accessing Object3D.matrixWorld.

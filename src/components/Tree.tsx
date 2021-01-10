@@ -24,7 +24,7 @@ const Tree: React.FC<Props> = ({position}) => {
     useFrame(() => {
         if (group?.current) {
             // Grow tree
-            if(group.current?.scale.x < minScale || group.current?.scale.x > 2) growTree.current = !growTree.current;
+            if(group.current?.scale.x < minScale || group.current?.scale.x > maxScale) growTree.current = !growTree.current;
             scale.current = growTree.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed, minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }

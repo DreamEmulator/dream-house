@@ -24,7 +24,6 @@ const Sky: React.FC<Props> = ({}) => {
     const direction_c03 = useRef<boolean>(true);
 
     useFrame(() => {
-        // Move cloud 1
         if (cloud_01.current && int_c01 && cloud_02.current && int_c02 && cloud_03.current && int_c03) {
             if (cloud_01.current.position.x > int_c01 + 50 || cloud_01.current.position.x < int_c01 - 50) direction_c01.current = !direction_c01.current;
             if (direction_c01.current) cloud_01.current.position.x += 0.01;
@@ -40,7 +39,7 @@ const Sky: React.FC<Props> = ({}) => {
             if (direction_c03.current) cloud_03.current.position.x += 0.01;
             else cloud_03.current.position.x -= 0.01;
         }
-
+        // Move cloud 1
 
     });
 

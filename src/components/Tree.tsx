@@ -10,7 +10,7 @@ interface Props {
 const Tree: React.FC<Props> = ({position}) => {
     // Trees are approx 4 meters high when scale = 0.15
     const minScale = 0.15;
-    const maxScale = 1.5;
+    const maxScale = 1;
     const growSpeed = 0.0005;
 
     const group = useRef<Group>();

@@ -18,7 +18,7 @@ const PatchOfTrees: React.FC<Props> = ({
         const trees = [];
         for (let x = 0; x < amount; x++) {
             trees.push(<Tree key={`tree_${x}`}
-                             position={[(Math.random()) * patchSize, 0, -(Math.random() * patchSize)]}/>)
+                             position={[(Math.random()) * patchSize, 1, -(Math.random() * patchSize)]}/>)
         }
         return trees;
     }, []);

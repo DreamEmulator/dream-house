@@ -24,13 +24,10 @@ const Bear: React.FC<Props> = ({scale = 0.002 * 20, position = [0, 0, 0], rotati
         <>
             <group onPointerUp={event => {
                 lookAtPoint && lookAtPoint(event.point);
-                setShowUFO(!showUFO);
             }}>
-
                 <ObjectFromGLTF file={require('../objects/bear.gltf').default} scale={scale} position={position}
                                 rotation={rotation}/>
             </group>
-            <UFO showUFO={showUFO}/>
         </>
     )
 };

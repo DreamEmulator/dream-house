@@ -4,14 +4,14 @@ import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlot, mapToPlotWithElevation, metersToUnits} from "./Helpers";
+import {mapToPlot, mapToPlotWithElevation} from "./Helpers";
 import Bear, {existentialBearPerspective} from "./components/Bear";
 import Lake from "./components/Lake";
 import FarmHouse from "./components/FarmHouse";
 import CubeOneM2 from "./components/CubeOneM2";
 import Trees from "./components/Trees";
 import Waves from "./components/Waves";
-import Terrain from "./components/Terrain";
+import Mountains from "./components/Mountains";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -27,16 +27,16 @@ function App() {
                 far: 10000
             }}>
                 <Lighting/>
-                <Lake position={mapToPlot(-2.5*20, 7.5*20)} radius={33}/>
-                <Waves position={[-2.5*20, 0.05*20, -7.5*20]}/>
+                <Lake position={[-50, 2, -150]} radius={33}/>
+                <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
                 <CubeOneM2/>
 
                 <Trees/>
                 <Suspense fallback={null}>
-                    <FarmHouse position={mapToPlot(8*20, 5*20)} rotation={[0, 90, 0]}/>
-                    <Bear position={mapToPlotWithElevation({x: 8.3*20, heightInMeters: 1, y: 3*20})}/>
-                    <Terrain/>
+                    <FarmHouse position={mapToPlot(8 * 20, 5 * 20)} rotation={[0, 90, 0]}/>
+                    <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
                 </Suspense>
+                <Mountains/>
                 <GroundPlot/>
                 <Controls/>
             </Canvas>

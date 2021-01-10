@@ -8,7 +8,7 @@ interface Props {
     radius?: number;
 }
 
-const Lake: React.FC<Props> = ({position, radius = metersToUnits(20)}) => {
+const Lake: React.FC<Props> = ({position, radius = metersToUnits(200)}) => {
     const circleRadius = radius;
     const circleShape = useMemo(() => new THREE.Shape()
         .moveTo(0, circleRadius)

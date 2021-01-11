@@ -41,10 +41,6 @@ function App() {
                 <Mountains/>
                 <Controls/>
             </Canvas>
-            <div id='scale'>
-                <p><span>⬜️</span> = 1m3</p>
-                <a target='_blank' href='map_with_grid_and_coordinates.png'>Map</a>
-            </div>
             <div id='explainer'>
                 <p>Rotate = <span>👆</span></p>
                 <p>Pan = <span>✌️</span>️</p>

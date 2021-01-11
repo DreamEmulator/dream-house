@@ -11,10 +11,10 @@ interface Props {
 const Sky: React.FC<Props> = ({}) => {
     return (
         <Suspense fallback={null}>
-            <Cloud scale={8} position={[30, 90, -150]}/>
+            <Cloud scale={3} position={[30, 90, -150]}/>
             <Cloud position={[180, 80, -300]}/>
-            <Cloud scale={10} position={[-60, 75, -50]}/>
-            <Cloud scale={6} position={[-100, 100, -150]}/>
+            <Cloud scale={3.5} position={[-60, 75, -50]}/>
+            <Cloud scale={2} position={[-100, 100, -150]}/>
         </Suspense>
     )
 };

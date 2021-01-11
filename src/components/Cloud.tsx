@@ -9,7 +9,7 @@ interface Props {
     scale?: number;
 }
 
-const Cloud: React.FC<Props> = ({position, scale = 4}) => {
+const Cloud: React.FC<Props> = ({position, scale = 1}) => {
     const cloud = useRef<Mesh<Geometry>>();
     const direction = useRef<boolean>(true);
     useFrame(() => {
@@ -21,8 +21,8 @@ const Cloud: React.FC<Props> = ({position, scale = 4}) => {
     });
 
     return (
-        <mesh ref={cloud} position={position} scale={scale(scale)}>
-            <ObjectFromGLTF file={require('../objects/cloud.glb').default}/>
+        <mesh ref={cloud} position={position}>
+            <ObjectFromGLTF scale={scale} file={require('../objects/cloud.glb').default}/>
         </mesh>
     )
 };

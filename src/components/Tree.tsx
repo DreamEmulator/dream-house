@@ -21,15 +21,17 @@ const Tree: React.FC<Props> = ({position}) => {
 
     useEffect(() => {
         setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_000);
-    }, [startGrowing.current]);
+    }, []);
 
     useFrame(() => {
         if (startGrowing.current && group.current) {
             // Grow tree
-            if(group.current?.scale.x < minScale || group.current?.scale.x > maxScale) {
-            growTaller.current = !growTaller.current;
-            startGrowing.current = !startGrowing.current;}
-            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - growSpeed * 2 , minScale);
+            if (group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
+                growTaller.current = !growTaller.current;
+                startGrowing.current = !startGrowing.current;
+                setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_000);
+            }
+            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - (growSpeed * 20), minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });

@@ -5,7 +5,7 @@ import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
 import {mapToPlotWithElevation} from "./Helpers";
-import Bear, {existentialBearPerspective} from "./components/Bear";
+import Bear from "./components/Bear";
 import Lake from "./components/Lake";
 import FarmHouse from "./components/FarmHouse";
 import CubeOneM2 from "./components/CubeOneM2";
@@ -23,7 +23,7 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                position: [143.6827808262251,3.489949670250107,-45.364732594329794],
+                position: [56.845490819514566, 14.144354975985182, -1.0556404126866994],
                 near: 1,
                 far: 10000
             }}>

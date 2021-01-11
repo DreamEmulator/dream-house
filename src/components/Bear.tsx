@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Suspense, useState} from 'react';
 import ObjectFromGLTF from "../objects/ObjectFromGLTF";
 import {Vector3} from "three";
 import {useThree} from "react-three-fiber";
@@ -21,14 +21,14 @@ const Bear: React.FC<Props> = ({scale = 0.002 * 20, position = [0, 0, 0], rotati
     }
     const [showUFO, setShowUFO] = useState(false);
     return (
-        <>
+        <Suspense fallback={null}>
             <group onPointerUp={event => {
                 lookAtPoint && lookAtPoint(event.point);
             }}>
                 <ObjectFromGLTF file={require('../objects/bear.gltf').default} scale={scale} position={position}
                                 rotation={rotation}/>
             </group>
-        </>
+        </Suspense>
     )
 };
 

@@ -1,18 +1,17 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlotWithElevation, rotate} from "./Helpers";
+import {mapToPlotWithElevation} from "./Helpers";
 import Bear from "./components/Bear";
 import Lake from "./components/Lake";
-import CubeOneM2 from "./components/CubeOneM2";
 import Trees from "./components/Trees";
 import Waves from "./components/Waves";
 import Mountains from "./components/Mountains";
 import Sky from "./components/Sky";
-import ObjectFromGLTF from "./objects/ObjectFromGLTF";
+import Bungalow from "./components/Bungalow";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -28,20 +27,15 @@ function App() {
                 far: 10000
             }}>
                 <Lighting/>
+                <Controls/>
                 <Lake position={[-50, 2, -150]} radius={33}/>
                 <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
-                <CubeOneM2/>
-                <Trees/>
-                <Suspense fallback={null}>
-
-                    <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
-                    <ObjectFromGLTF file={require('./objects/nice_bungalow.glb').default} position={[160, 1, -100]}
-                                    scale={2} rotation={rotate(180)}/>
-                </Suspense>
                 <Sky/>
+                <Trees/>
+                <Bungalow position={[160, 1, -100]}/>
+                <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
                 <GroundPlot/>
                 <Mountains/>
-                <Controls/>
             </Canvas>
             <div id='explainer'>
                 <p>Rotate = <span>👆</span></p>

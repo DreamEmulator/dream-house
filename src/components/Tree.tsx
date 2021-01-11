@@ -11,7 +11,7 @@ const Tree: React.FC<Props> = ({position}) => {
     // Trees are approx 4 meters high when scale = 0.15
     const initialScale = 0.16;
     const minScale = 0.15;
-    const maxScale = 0.75;
+    const maxScale = 0.45;
     const growSpeed = 0.00025;
 
     const group = useRef<Group>();

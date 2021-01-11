@@ -12,8 +12,8 @@ const Sky: React.FC<Props> = ({}) => {
     return (
         <Suspense fallback={null}>
             <Cloud scale={8} position={[30, 90, -125]}/>
-            <Cloud scale={20} position={[180, 100, -250]}/>
-            <Cloud scale={14} position={[-60, 75, -50]}/>
+            <Cloud scale={12.5} position={[180, 100, -285]}/>
+            <Cloud scale={6} position={[-60, 75, -50]}/>
             <Cloud scale={10} position={[-100, 150, -150]}/>
         </Suspense>
     )

@@ -5,10 +5,11 @@ import {scale} from "../Helpers";
 import ObjectFromGLTF from "../objects/ObjectFromGLTF";
 
 interface Props {
-    position: [number, number, number]
+    position: [number, number, number];
+    scale?: number;
 }
 
-const Cloud: React.FC<Props> = ({position}) => {
+const Cloud: React.FC<Props> = ({position, scale = 4}) => {
     const cloud = useRef<Mesh<Geometry>>();
     const direction = useRef<boolean>(true);
     useFrame(() => {
@@ -20,7 +21,7 @@ const Cloud: React.FC<Props> = ({position}) => {
     });
 
     return (
-        <mesh ref={cloud} position={position} scale={scale(4)}>
+        <mesh ref={cloud} position={position} scale={scale(scale)}>
             <ObjectFromGLTF file={require('../objects/cloud.glb').default}/>
         </mesh>
     )

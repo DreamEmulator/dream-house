@@ -1,21 +1,21 @@
 import React, {useEffect, useRef} from "react";
 import {extend, useFrame, useThree} from "react-three-fiber";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
-import {Vector3} from "three";
 import {deg2Rad} from "../Helpers";
 
 extend({OrbitControls});
 
 interface Props {
+    controls:  React.MutableRefObject<OrbitControls | undefined>
 }
 
-const Controls: React.FC<Props> = ({}) => {
+const Controls: React.FC<Props> = ({controls}) => {
     const {
         camera,
         gl: {domElement},
     } = useThree();
     // Ref to the controls, so that we can update them on every frame using useFrame
-    const controls = useRef<OrbitControls>();
+    
     useFrame((state) => {
         controls?.current?.update()
         // console.log(camera.position);

@@ -28,6 +28,13 @@ body {
     font-size: 32px;
 }
 
+.autoRotate {
+    position: fixed;
+    left: 1vh;
+    bottom: 1vh;
+    font-size: 32px;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
@@ -12,13 +12,15 @@ import Waves from "./components/Waves";
 import Mountains from "./components/Mountains";
 import Sky from "./components/Sky";
 import Bungalow from "./components/Bungalow";
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import Buttons from "./components/Buttons";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
     // The dimensions of the plot are approx:
     // x = -6 till 9
     // y = 0 till 14
-
+    const controls = useRef<OrbitControls>();
     return (
         <>
             <Canvas camera={{
@@ -27,7 +29,7 @@ function App() {
                 far: 10000
             }}>
                 <Lighting/>
-                <Controls/>
+                <Controls controls={controls}/>
                 <Lake position={[-50, 2, -150]} radius={33}/>
                 <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
                 <Sky/>
@@ -37,6 +39,7 @@ function App() {
                 <GroundPlot/>
                 <Mountains/>
             </Canvas>
+            <Buttons controls={controls}/>
             <div id='explainer'>
                 <p>Rotate = <span>👆</span></p>
                 <p>Pan = <span>✌️</span>️</p>

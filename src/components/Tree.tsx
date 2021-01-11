@@ -11,7 +11,7 @@ const Tree: React.FC<Props> = ({position}) => {
     // Trees are approx 4 meters high when scale = 0.15
     const initialScale = 0.16;
     const minScale = 0.15;
-    const maxScale = 1;
+    const maxScale = 0.45;
     const growSpeed = 0.00025;
 
     const group = useRef<Group>();
@@ -29,7 +29,7 @@ const Tree: React.FC<Props> = ({position}) => {
             if (group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
                 growTaller.current = !growTaller.current;
                 startGrowing.current = !startGrowing.current;
-                setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_000);
+                setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_0);
             }
             scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - (growSpeed * 20), minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
@@ -37,7 +37,7 @@ const Tree: React.FC<Props> = ({position}) => {
     });
     return (
         <group ref={group} onPointerUp={() => {
-            growTaller.current = !growTaller.current;
+            growTaller.current = true;
             startGrowing.current = true;
         }} scale={[scale.current, scale.current, scale.current]} position={position}
                rotation={[0, (Math.random() - 0.5) * 100, 0]}>

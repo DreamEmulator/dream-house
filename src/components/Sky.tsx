@@ -1,8 +1,5 @@
 import React, {Suspense, useRef} from 'react';
-import ObjectFromGLTF from "../objects/ObjectFromGLTF";
-import {Geometry, Mesh} from "three";
-import {scale} from "../Helpers";
-import {useFrame} from "react-three-fiber";
+
 import Cloud from "./Cloud";
 
 interface Props {

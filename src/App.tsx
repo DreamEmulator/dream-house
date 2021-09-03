@@ -14,6 +14,7 @@ import Sky from "./components/Sky";
 import Bungalow from "./components/Bungalow";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import Buttons from "./components/Buttons";
+import Bench from "./components/Bench";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -33,6 +34,7 @@ function App() {
                 <Lake position={[-50, 2, -150]} radius={33}/>
                 <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
                 <Sky/>
+                <Bench position={mapToPlotWithElevation({x: 8.3 * 10, heightInMeters: 1, y: 3 * 10})}/>
                 <Trees/>
                 <Bungalow position={[160, 1, -100]}/>
                 <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>

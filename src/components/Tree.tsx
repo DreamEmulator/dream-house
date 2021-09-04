@@ -20,7 +20,7 @@ const Tree: React.FC<Props> = ({position}) => {
     let scale = useRef(initialScale);
 
     useEffect(() => {
-        setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_000);
+        setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_0000);
     }, []);
 
     useFrame(() => {
@@ -29,9 +29,9 @@ const Tree: React.FC<Props> = ({position}) => {
             if (group.current?.scale.x === minScale || group.current?.scale.x === maxScale) {
                 growTaller.current = !growTaller.current;
                 startGrowing.current = !startGrowing.current;
-                setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_0);
+                setTimeout(() => startGrowing.current = !startGrowing.current, Math.random() * 1000_00);
             }
-            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - (growSpeed * 20), minScale);
+            scale.current = growTaller.current ? Math.min(group.current.scale.x + growSpeed, maxScale) : Math.max(group.current.scale.x - (growSpeed * 200), minScale);
             group.current.scale.set(scale.current, scale.current, scale.current);
         }
     });

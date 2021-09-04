@@ -34,7 +34,7 @@ function App() {
                 <Lake position={[-50, 2, -150]} radius={33}/>
                 <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
                 <Sky/>
-                <Bench position={mapToPlotWithElevation({x: 8.3 * 10, heightInMeters: 1, y: 3 * 10})}/>
+                <Bench scale={15} position={mapToPlotWithElevation({x: 3, heightInMeters: 6, y: 100  })}/>
                 <Trees/>
                 <Bungalow position={[160, 1, -100]}/>
                 <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>

@@ -8,8 +8,7 @@ import {mapToPlotWithElevation} from "./Helpers";
 import Bear from "./components/Bear";
 import Lake from "./components/Lake";
 import Trees from "./components/Trees";
-import Waves from "./components/Waves";
-import Mountains from "./components/Mountains";
+import Field from "./components/Mountains";
 import Sky from "./components/Sky";
 import Bungalow from "./components/Bungalow";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
@@ -19,27 +18,26 @@ import Bench from "./components/Bench";
 function App() {
     //  One Unit in ThreeJS is 1 meter
     // The dimensions of the plot are approx:
-    // x = -6 till 9
-    // y = 0 till 14
+    // x = -120 till 180
+    // y = 0 till 280
     const controls = useRef<OrbitControls>();
     return (
         <>
             <Canvas camera={{
                 position: [56.845490819514566, 14.144354975985182, -1.0556404126866994],
                 near: 1,
-                far: 10000
+                far: 15_000
             }}>
                 <Lighting/>
                 <Controls controls={controls}/>
-                <Lake position={[-50, 2, -150]} radius={33}/>
-                <Waves position={[-2.5 * 20, 2, -7.5 * 20]}/>
-                <Sky/>
-                <Bench scale={15} position={mapToPlotWithElevation({x: 3, heightInMeters: 6, y: 100  })}/>
-                <Trees/>
-                <Bungalow position={[160, 1, -100]}/>
+                <Bench rotate={5} scale={2} position={mapToPlotWithElevation({x: 0, y: 100, heightInMeters: 8,})}/>
+                <Bungalow position={mapToPlotWithElevation({x: 0, y: 155, heightInMeters: 2})} rotation={230}/>
                 <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
+                <Lake position={mapToPlotWithElevation({x: -15, y: 130, heightInMeters: 5,})} radius={10}/>
+                <Sky/>
+                <Trees/>
                 <GroundPlot/>
-                <Mountains/>
+                <Field/>
             </Canvas>
             <Buttons controls={controls}/>
             <div id='explainer'>

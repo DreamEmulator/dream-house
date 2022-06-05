@@ -2,6 +2,7 @@ import React, {useMemo, useState} from 'react';
 import * as THREE from 'three';
 import {metersToUnits} from "../Helpers";
 import {Colors} from "../types/Colors";
+import Waves from "./Waves";
 
 interface Props {
     position: [number, number, number];
@@ -15,14 +16,15 @@ const Lake: React.FC<Props> = ({position, radius = metersToUnits(200)}) => {
         .quadraticCurveTo(circleRadius, circleRadius, circleRadius, 0)
         .quadraticCurveTo(circleRadius, -circleRadius, 0, -circleRadius)
         .quadraticCurveTo(-circleRadius, -circleRadius, -circleRadius, 0)
-        .quadraticCurveTo(-circleRadius, circleRadius, 0, circleRadius), []);
+        .quadraticCurveTo(-circleRadius, circleRadius, 0, circleRadius), [circleRadius]);
 
     return (
         <>
-        <mesh rotation={[-(Math.PI / 2), 0, 0]} position={position}>
-            <shapeGeometry args={[circleShape]}/>
-            <meshPhongMaterial color={Colors.blue}/>
-        </mesh>
+            <mesh rotation={[-(Math.PI / 2), 0, 0]} position={position}>
+                <shapeGeometry args={[circleShape]}/>
+                <meshPhongMaterial color={Colors.blue}/>
+            </mesh>
+            <Waves position={position} size={radius/2}/>
         </>
     )
 };

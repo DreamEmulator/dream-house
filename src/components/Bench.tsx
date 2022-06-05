@@ -5,15 +5,16 @@ import ObjectFromGLTF from "../objects/ObjectFromGLTF";
 interface Props {
     position: [number, number, number];
     scale?: number;
+    rotate?: number;
 }
 
-const Bench: React.FC<Props> = ({position, scale = 1}) => {
+const Bench: React.FC<Props> = ({position, scale = 1, rotate = 90}) => {
     const bench = useRef<Mesh<Geometry>>();
 
     return (
         <Suspense fallback={null}>
             <mesh ref={bench} position={position}>
-                <ObjectFromGLTF rotation={[0,90,0]} scale={scale} file={require('../objects/bench.glb').default}/>
+                <ObjectFromGLTF rotation={[0, rotate, 0]} scale={scale} file={require('../objects/bench.glb').default}/>
             </mesh>
         </Suspense>
     )

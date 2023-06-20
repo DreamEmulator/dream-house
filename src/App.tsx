@@ -9,6 +9,8 @@ import Field from "./components/Mountains";
 import Sky from "./components/Sky";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import Buttons from "./components/Buttons";
+import GeoDome from "./components/GeoDome";
+import {mapToPlotWithElevation} from "./Helpers";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -31,6 +33,10 @@ function App() {
                 {/*<Lake position={mapToPlotWithElevation({x: -15, y: 130, heightInMeters: 5,})} radius={10}/>*/}
                 <Sky/>
                 <Trees/>
+                <GeoDome rotation={20} scale={0.8}
+                         position={mapToPlotWithElevation({x: -80, y: 180, heightInMeters: 6})}/>
+                <GeoDome rotation={20} scale={0.8}
+                         position={mapToPlotWithElevation({x: -100, y: 190, heightInMeters: 6})}/>
                 <GroundPlot/>
                 <Field/>
             </Canvas>

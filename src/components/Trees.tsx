@@ -8,31 +8,34 @@ interface Props {
 const Trees: React.FC<Props> = ({}) => {
     return (
         <Suspense fallback={null}>
-            {/*At the Lake*/}
-            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 6})} amount={500}
-                          patchSize={metersToUnits(60)}
-                          rotation={-4}
+            {/* SOuth Georgia Neighbors trees*/}
+            <PatchOfTrees position={mapToPlotWithElevation({x: -100, heightInMeters: 1, y: -10})} amount={1000}
+                          patchSize={metersToUnits(100)}
+                          rotation={4}
             />
-            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 65})} amount={250}
+            {/*Dense rows of birches at the road side at your left hand*/}
+            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 6})} amount={30}
                           patchSize={metersToUnits(40)}
-                          rotation={-4}
+                          rotation={4}
             />
-            <PatchOfTrees position={mapToPlotWithElevation({x: 40, heightInMeters: 1, y: 65})} amount={250}
+            <PatchOfTrees position={mapToPlotWithElevation({x: 40, heightInMeters: 1, y: 12})} amount={30}
                           patchSize={metersToUnits(40)}
-                          rotation={-4}
+                          rotation={10}
             />
-            <PatchOfTrees position={mapToPlotWithElevation({x: -10, heightInMeters: 1, y: 145})} amount={250}
+            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 40})} amount={30}
                           patchSize={metersToUnits(40)}
-                          rotation={60}
+                          rotation={4}
             />
-            <PatchOfTrees position={mapToPlotWithElevation({x: 30, heightInMeters: 1, y: 110})} amount={250}
-                          patchSize={metersToUnits(40)}
-                          rotation={60}
+            <PatchOfTrees position={mapToPlotWithElevation({x: 40, heightInMeters: 1, y: 55})} amount={30}
+                          patchSize={metersToUnits(20)}
+                          rotation={4}
             />
-            <PatchOfTrees position={mapToPlotWithElevation({x: -50, heightInMeters: 1, y: 150})} amount={500}
-                          patchSize={metersToUnits(60)}
-                          rotation={60}
-            />
+
+            {/*/!*Thinner rows of birches at the road side at your left hand*!/*/}
+            {/*<PatchOfTrees position={mapToPlotWithElevation({x: 80, heightInMeters: 1, y: 20})} amount={100}*/}
+            {/*              patchSize={metersToUnits(60)}*/}
+            {/*              rotation={4}*/}
+            {/*/>*/}
         </Suspense>
     )
 };

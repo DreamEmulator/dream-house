@@ -4,16 +4,11 @@ import {Canvas} from "react-three-fiber";
 import Lighting from "./components/Lighting";
 import Controls from "./components/Controls";
 import GroundPlot from "./components/GroundPlot";
-import {mapToPlotWithElevation} from "./Helpers";
-import Bear from "./components/Bear";
-import Lake from "./components/Lake";
 import Trees from "./components/Trees";
 import Field from "./components/Mountains";
 import Sky from "./components/Sky";
-import Bungalow from "./components/Bungalow";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import Buttons from "./components/Buttons";
-import Bench from "./components/Bench";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -30,10 +25,10 @@ function App() {
             }}>
                 <Lighting/>
                 <Controls controls={controls}/>
-                <Bench rotate={5} scale={2} position={mapToPlotWithElevation({x: 0, y: 100, heightInMeters: 8,})}/>
-                <Bungalow position={mapToPlotWithElevation({x: 0, y: 155, heightInMeters: 2})} rotation={230}/>
-                <Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>
-                <Lake position={mapToPlotWithElevation({x: -15, y: 130, heightInMeters: 5,})} radius={10}/>
+                {/*<Bench rotate={5} scale={2} position={mapToPlotWithElevation({x: 0, y: 100, heightInMeters: 8,})}/>*/}
+                {/*<Bungalow position={mapToPlotWithElevation({x: 0, y: 155, heightInMeters: 2})} rotation={230}/>*/}
+                {/*<Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>*/}
+                {/*<Lake position={mapToPlotWithElevation({x: -15, y: 130, heightInMeters: 5,})} radius={10}/>*/}
                 <Sky/>
                 <Trees/>
                 <GroundPlot/>

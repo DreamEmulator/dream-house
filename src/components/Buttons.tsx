@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {OrbitControls} from "@react-three/drei";
 
 interface Props {
@@ -13,6 +13,11 @@ const Buttons: React.FC<Props> = ({controls}) => {
             controls.current.autoRotateSpeed = 0.5;
         }
     }
+
+    useEffect(() => {
+        autoRotate()
+    }, [])
+
     return (
         <div className='autoRotate' onPointerUp={autoRotate}>🔁️</div>
     )

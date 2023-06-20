@@ -22,9 +22,9 @@ function App() {
     return (
         <>
             <Canvas camera={{
-                position: [56.845490819514566, 14.144354975985182, -1.0556404126866994],
+                position: [-5.19231150078123, 15.849508611923106, -25.84640536059206],
                 near: 1,
-                far: 15_000
+                far: 15_000,
             }}>
                 <Lighting/>
                 <Controls controls={controls}/>

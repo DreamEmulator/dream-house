@@ -27,7 +27,8 @@ const Controls: React.FC<Props> = ({controls}) => {
             controls.current.minDistance = 2;
             controls.current.maxDistance = 100;
             controls.current.maxPolarAngle = deg2Rad(88);
-            camera.position.set(-44.22875725151506, 62.235121986156415, -34.514687908560845);
+            controls.current.autoRotate = true
+            controls.current.autoRotateSpeed = .05
         }
     }, [controls]);
 

@@ -11,6 +11,7 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import Buttons from "./components/Buttons";
 import GeoDome from "./components/GeoDome";
 import {mapToPlotWithElevation} from "./Helpers";
+import Lake from "./components/Lake";
 
 function App() {
     //  One Unit in ThreeJS is 1 meter
@@ -30,13 +31,13 @@ function App() {
                 {/*<Bench rotate={5} scale={2} position={mapToPlotWithElevation({x: 0, y: 100, heightInMeters: 8,})}/>*/}
                 {/*<Bungalow position={mapToPlotWithElevation({x: 0, y: 155, heightInMeters: 2})} rotation={230}/>*/}
                 {/*<Bear position={mapToPlotWithElevation({x: 8.3 * 20, heightInMeters: 1, y: 3 * 20})}/>*/}
-                {/*<Lake position={mapToPlotWithElevation({x: -15, y: 130, heightInMeters: 5,})} radius={10}/>*/}
+                <Lake position={mapToPlotWithElevation({x: -90, y: 190, heightInMeters: 5})} radius={7.5}/>
                 <Sky/>
                 <Trees/>
-                <GeoDome rotation={20} scale={0.8}
-                         position={mapToPlotWithElevation({x: -80, y: 180, heightInMeters: 6})}/>
-                <GeoDome rotation={20} scale={0.8}
-                         position={mapToPlotWithElevation({x: -100, y: 190, heightInMeters: 6})}/>
+                <GeoDome rotation={-80} scale={0.4}
+                         position={mapToPlotWithElevation({x: -70, y: 200, heightInMeters: 2})}/>
+                <GeoDome rotation={40} scale={0.4}
+                         position={mapToPlotWithElevation({x: -100, y: 220, heightInMeters: 2})}/>
                 <GroundPlot/>
                 <Field/>
             </Canvas>

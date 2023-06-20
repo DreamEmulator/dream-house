@@ -71,6 +71,10 @@ const Trees: React.FC<Props> = ({}) => {
                           patchSize={metersToUnits(30)}
                           rotation={-35}
             />
+            <PatchOfTrees position={mapToPlotWithElevation({x: 25, heightInMeters: 1, y: 160})} amount={100}
+                          patchSize={metersToUnits(30)}
+                          rotation={-35}
+            />
             {/*Dense rows of birches at the roadside at your left hand*/}
             <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 6})} amount={30}
                           patchSize={metersToUnits(40)}
@@ -89,6 +93,14 @@ const Trees: React.FC<Props> = ({}) => {
                           rotation={4}
             />
             {/*The peninsula of trees running through the middle*/}
+            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 10})} amount={100}
+                          patchSize={metersToUnits(60)}
+                          rotation={4}
+            />
+            <PatchOfTrees position={mapToPlotWithElevation({x: 0, heightInMeters: 1, y: 70})} amount={40}
+                          patchSize={metersToUnits(40)}
+                          rotation={4}
+            />
             <PatchOfTrees position={mapToPlotWithElevation({x: 80, heightInMeters: 1, y: 80})} amount={20}
                           patchSize={metersToUnits(20)}
                           rotation={4}
@@ -126,7 +138,6 @@ const Trees: React.FC<Props> = ({}) => {
                           patchSize={metersToUnits(50)}
                           rotation={4}
             />
-            {/*Very dense are in the middle that would be a cool place to make the permaculture*/}
             <PatchOfTrees position={mapToPlotWithElevation({x: -85, heightInMeters: 1, y: 115})} amount={150}
                           patchSize={metersToUnits(50)}
                           rotation={4}

@@ -1,8 +1,7 @@
-import React, {useMemo, useState} from 'react';
+import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {metersToUnits} from "../Helpers";
 import {Colors} from "../types/Colors";
-import Waves from "./Waves";
 
 interface Props {
     position: [number, number, number];
@@ -24,7 +23,7 @@ const Lake: React.FC<Props> = ({position, radius = metersToUnits(200)}) => {
                 <shapeGeometry args={[circleShape]}/>
                 <meshPhongMaterial color={Colors.blue}/>
             </mesh>
-            <Waves position={position} size={radius/2}/>
+            {/*<Waves position={position} size={radius/2}/>*/}
         </>
     )
 };

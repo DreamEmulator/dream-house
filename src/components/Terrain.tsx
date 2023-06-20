@@ -92,8 +92,8 @@ const Terrain: React.FC<Props> = () => {
 
 
     return (
-        <mesh position={[-width / 2 - 7.5, 0, -height - 35 ]} scale={[1.38,1.5,1.2]}>
-            <geometry ref={geometry}/>
+        <mesh position={[-width / 2 - 7.5, 0, -height - 35]} scale={[1.38, 1.5, 1.2]}>
+            <bufferGeometry ref={geometry}/>
             <meshPhongMaterial flatShading color={Colors.green} side={DoubleSide}/>
         </mesh>
     )

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Geodesic Dome with Deer & Lights
+* source:	https://sketchfab.com/3d-models/geodesic-dome-with-deer-lights-6c5a7bf9b62041729a0dc1aa2427a00e
+* author:	CaseyJScalf (https://sketchfab.com/CaseyJScalf)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Geodesic Dome with Deer & Lights" (https://sketchfab.com/3d-models/geodesic-dome-with-deer-lights-6c5a7bf9b62041729a0dc1aa2427a00e) by CaseyJScalf (https://sketchfab.com/CaseyJScalf) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

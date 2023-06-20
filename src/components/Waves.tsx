@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import * as THREE from 'three';
 import {DoubleSide, Geometry, Mesh} from 'three';
 import {useFrame} from "react-three-fiber";
@@ -89,9 +89,9 @@ const Waves: React.FC<Props> = ({position = [0, 0, 0], size = 20}) => {
     });
     return (
         <mesh ref={mesh} position={position} receiveShadow
-              matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)} >
+              matrix={new THREE.Matrix4().makeRotationX(-Math.PI / 2)}>
             <meshPhongMaterial color={Colors.blue} transparent flatShading opacity={.8} side={DoubleSide}/>
-            <planeGeometry args={[2.25*size,2.5*size,size,size]}/>
+            <planeGeometry args={[2.25 * size, 2.5 * size, size, size]}/>
         </mesh>
     )
 };
